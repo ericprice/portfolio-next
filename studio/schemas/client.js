@@ -1,6 +1,6 @@
 export default {
-  name: 'author',
-  title: 'Author',
+  name: 'client',
+  title: 'Client',
   type: 'document',
   fields: [
     {
@@ -10,10 +10,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'picture',
-      title: 'Picture',
-      type: 'image',
-      options: { hotspot: true },
+      name: 'location',
+      title: 'Location',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     },
   ],

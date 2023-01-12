@@ -1,7 +1,11 @@
 {
   "root": true,
+  "api": {
+    "projectId": "qg4c46wo",
+    "dataset": "production"
+  },
   "project": {
-    "name": "Blog"
+    "name": "Portfolio"
   },
   "plugins": [
     "@sanity/base",
@@ -13,7 +17,9 @@
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [

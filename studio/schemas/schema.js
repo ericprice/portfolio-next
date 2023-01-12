@@ -6,8 +6,10 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
 // import blockContent from './blockContent'
-import post from './post'
-import author from './author'
+import project from './project'
+import category from './category'
+import client from './client'
+import collaborator from './collaborator'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,7 +19,9 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
-    post,
-    author,
+    project,
+    category,
+    client,
+    collaborator,
   ]),
 })

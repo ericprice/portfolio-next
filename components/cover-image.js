@@ -22,13 +22,13 @@ export default function CoverImage({ title, slug, image: source, priority }) {
       />
     </div>
   ) : (
-    <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
+    <div className="no-image-remove-me"></div>
   )
 
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link href={`/posts/${slug}`} aria-label={title}>
+        <Link href={`/projects/${slug}`} aria-label={title}>
           {image}
         </Link>
       ) : (
