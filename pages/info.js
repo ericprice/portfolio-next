@@ -16,11 +16,11 @@ export default function Index({ allProjects: initialAllProjects, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Eric Price</title>
+          <title>Info &ndash; Eric Price</title>
         </Head>
         <Container>
           <Header />
-          {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
+          test
         </Container>
       </Layout>
     </>

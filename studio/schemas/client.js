@@ -16,4 +16,14 @@ export default {
       validation: (Rule) => Rule.required(),
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      location: 'location',
+    },
+    prepare(selection) {
+      const { location } = selection
+      return { ...selection, subtitle: location }
+    },
+  },
 }

@@ -4,5 +4,5 @@ export default function Date({ dateString }) {
   if (!dateString) return null
 
   const date = parseISO(dateString)
-  return <time dateTime={dateString}>{format(date, 'yyyy')}</time>
+  return <time className="project-preview-item project-preview-date" dateTime={dateString}><span className="project-preview-date-inner">{format(date, 'yyyy')}</span></time>
 }

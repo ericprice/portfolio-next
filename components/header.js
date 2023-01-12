@@ -1,12 +1,21 @@
 import Link from 'next/link'
 
-export default function Header() {
+export default function Intro() {
   return (
-    <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
-      <Link href="/" className="hover:underline">
-        Blog
-      </Link>
-      .
-    </h2>
+    <header className="site-header">
+      <h1 className="site-header-title">
+        <Link href="/">
+          Eric Price
+        </Link>
+      </h1>
+      <h2 className="site-header-subtitle">
+        Graphic design &amp; programming
+      </h2>
+      <div className="site-header-info">
+        <Link href="/info">
+          .info
+        </Link>
+      </div>
+    </header>
   )
 }

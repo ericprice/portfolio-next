@@ -6,7 +6,7 @@ export default function Meta() {
     <Head>
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        content={`Graphic design &amp; programming`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} key="ogImage" />
     </Head>

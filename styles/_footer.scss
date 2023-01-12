@@ -1,0 +1,45 @@
+.site-footer {
+  margin-top: 3rem;
+  grid-column: span 12;
+  
+  @include breakpoint($s) {
+    &.site-footer-mobile {
+      display: grid;
+      gap: .625rem;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    
+    &.site-footer-desktop {
+      display: none;
+    }
+    
+    .site-footer-section {
+      grid-column: span 6;
+    }
+  }
+  
+  @include breakpoint($m-up) {
+    &.site-footer-desktop {
+      margin: 3rem 0 1.5rem;
+      grid-column-start: 3;
+      grid-column-end: 11;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    &.site-footer-mobile {
+      display: none;
+    }
+  }
+  
+  .single &,
+  .page-template-page-about &,
+  .search-active &,
+  .error404 & {
+    display: none !important;
+  }
+  
+  a:hover {
+    @include underline;
+  }
+}

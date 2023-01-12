@@ -1,0 +1,225 @@
+$s: max-width 767px;
+$m-down: max-width 1023px;
+$m: 768px 1023px;
+$m-up: min-width 768px;
+$l-down: max-width 1599px;
+$l: 1024px 1599px;
+$l-up: min-width 1024px;
+$xl: min-width 1600px;
+
+$main-color: #222;
+$main-bg: #aaa;
+$accent: #fff;
+
+:root {
+  --viewport-height: 100%;
+  --outer-margin-y: .7rem;
+  --outer-margin-x: .75rem;
+  --leading: 1.2em;
+  --gap: .75rem;
+  --letter-spacing: .02em;
+}
+
+::selection {
+  background: rgba($accent, .95);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 12px;
+
+  @include breakpoint($m-up) {
+    font-size: 1.333vw;
+  }
+
+  @include breakpoint($xl) {
+    font-size: 21px;
+  }
+}
+
+body {
+  padding: var(--outer-margin-y) var(--outer-margin-x);
+  background: $main-bg;
+  color: $main-color;
+  font-family: 'Monument Grotesk', sans-serif;
+  font-size: 1rem;
+  line-height: var(--leading);
+  word-spacing: .06em;
+  text-size-adjust: none;
+  text-rendering: optimizeLegibility;
+  @include antialiased;
+  cursor: url('/images/cursor-black.svg'), auto;
+  cursor: -webkit-image-set(
+    url('/images/cursor-black.svg') 1x,
+    url('/images/cursor-black@2x.svg') 2x
+  ) 6 6, auto;
+}
+
+img,
+audio,
+video,
+iframe,
+object,
+embed,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+a {
+  color: $main-color;
+  cursor: url('/images/cursor-white.svg'), auto;
+  cursor: -webkit-image-set(
+    url('/images/cursor-white.svg') 1x,
+    url('/images/cursor-white@2x.svg') 2x
+  ) 6 6, auto;
+  
+  &:hover {
+    color: $accent;
+  }
+}
+
+button {
+  color: $main-color;
+  cursor: pointer;
+  
+  &:hover {
+    color: $accent;
+  }
+}
+
+button,
+input,
+textarea {
+  font-family: 'Monument Grotesk', sans-serif;
+  font-size: 1rem;
+  line-height: var(--leading);
+  letter-spacing: var(--letter-spacing);
+}
+
+.lining {
+  vertical-align: .09em;
+  line-height: 0;
+}
+
+.projects-list {
+  position: relative;
+  
+  .projects-list-header {
+    position: sticky;
+    top: calc(var(--outer-margin-y) + var(--leading));
+    z-index: 50;
+    display: grid;
+    gap: 0 var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+    padding-bottom: calc(var(--leading) / 3);
+    background: $main-bg;
+    border-bottom: 1px solid $main-color;
+    
+    .projects-list-header-date,
+    .projects-list-header-client,
+    .projects-list-header-categories,
+    .projects-list-header-collaborators {
+      grid-column: span 2;
+    }
+    
+    .projects-list-header-title {
+      grid-column: span 4;
+    }
+  }
+  
+  .project-preview[data-start-of-year=true] .project-preview-date {
+    visibility: visible;
+  }
+  
+  .project-preview-content {
+    position: relative;
+    display: grid;
+    gap: 0 var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+    
+    .project-preview-content-inner {
+      display: grid;
+      gap: 0 var(--gap);
+      grid-template-columns: repeat(10, 1fr);
+      padding: calc(var(--leading) / 3) 0;
+      border-top: 1px solid $main-color;
+      margin-top: -1px;
+      grid-column: span 10;
+    }
+    
+    &:hover {
+      &::before {
+        position: absolute;
+        top: calc(var(--leading) / 3);
+        left: 0;
+        content: '↗ Case study';
+        pointer-events: none;
+      }
+      
+      .project-preview-date-inner {
+        visibility: hidden;
+      }
+    }
+    
+    .project-preview-date {
+      position: relative;
+      grid-column: span 2;
+      padding: calc(var(--leading) / 3) 0;
+      font-variant-numeric: tabular-nums;
+      visibility: hidden;
+      margin-top: -1px;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% + var(--gap));
+        border-top: 1px solid $main-color;
+      }
+    }
+    
+    .project-preview-title {
+      grid-column: span 4;
+    }
+    
+    .project-preview-client,
+    .project-preview-categories,
+    .project-preview-collaborators {
+      grid-column: span 2;
+      
+      li {
+        display: inline;
+        
+        &::after {
+          content: ', ';
+        }
+        
+        &:last-child::after {
+          content: '';
+        }
+      }
+    }
+    
+    .project-preview-thumbnail {
+      position: absolute;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.site-header {
+  margin-bottom: var(--leading);
+  
+  .site-header-title,
+  .site-header-info {
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    padding: var(--outer-margin-y) var(--outer-margin-x) 0;
+    z-index: 100;
+    background: $main-bg;
+    width: 50vw;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      height: .25rem;
+      background: linear-gradient(to bottom, rgba($main-bg, 1) 0%,rgba($main-bg, 0) 100%);
+      pointer-events: none;
+    }
+  }
+  
+  .site-header-title {
+    left: 0;
+  }
+  
+  .site-header-info {
+    right: 0;
+    text-align: right;
+  }
+  
+  .site-header-subtitle {
+    margin-top: var(--leading);
+  }
+}

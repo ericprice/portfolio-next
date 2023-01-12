@@ -1,0 +1,73 @@
+@mixin antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin subpixel-antialiased {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+@mixin hide-text {
+  text-indent: 300%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin no-tap-highlight {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@mixin hardware-accelerate {
+  transform: translate3d(0, 0, 0);
+}
+
+@mixin placeholder-color($color) {
+  &::placeholder {
+    color: $color;
+    opacity: 1;
+  }
+
+  &:focus {
+    &::placeholder {
+      color: rgba($color, 0);
+    }
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin underline {
+  padding-bottom: .05em;
+  margin-bottom: -.05em;
+  background-image: linear-gradient(to bottom, $main-color 50%, $main-color 50%);
+  background-repeat: repeat-x;
+  background-size: .08em .08em;
+  background-position: 0 95%;
+}
+
+@mixin underline-inverted {
+  padding-bottom: .05em;
+  margin-bottom: -.05em;
+  background-image: linear-gradient(to bottom, $main-bg 50%, $main-bg 50%);
+  background-repeat: repeat-x;
+  background-size: .08em .08em;
+  background-position: 0 95%;
+}
