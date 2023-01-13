@@ -4,17 +4,12 @@ import ProjectsList from '../components/projects-list'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import { indexQuery } from '../lib/queries'
-import { usePreviewSubscription } from '../lib/sanity'
-import { getClient, overlayDrafts } from '../lib/sanity.server'
+import { client } from '../lib/sanity.server'
 
-export default function Index({ allProjects: initialAllProjects, preview }) {
-  const { data: allProjects } = usePreviewSubscription(indexQuery, {
-    initialData: initialAllProjects,
-    enabled: preview,
-  })
+export default function Index({ allProjects }) {
   return (
     <>
-      <Layout preview={preview}>
+      <Layout>
         <Head>
           <title>Eric Price</title>
         </Head>
@@ -27,11 +22,12 @@ export default function Index({ allProjects: initialAllProjects, preview }) {
   )
 }
 
-export async function getStaticProps({ preview = false }) {
-  const allProjects = overlayDrafts(await getClient(preview).fetch(indexQuery))
+export async function getStaticProps() {
+  const allProjects = await client.fetch(indexQuery)
   return {
-    props: { allProjects, preview },
-    // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
+    props: {
+      allProjects
+    },
     revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
   }
 }

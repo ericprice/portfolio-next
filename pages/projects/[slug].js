@@ -3,91 +3,68 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
-import MoreStories from '../../components/projects-list'
 import Header from '../../components/header'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
-import { indexQuery, projectSlugsQuery } from '../../lib/queries'
-import { urlForImage, usePreviewSubscription } from '../../lib/sanity'
-import { sanityClient, getClient, overlayDrafts } from '../../lib/sanity.server'
+import { projectQuery, projectSlugsQuery } from '../../lib/queries'
+import { urlForImage } from '../../lib/sanity'
+import { client } from '../../lib/sanity.server'
 
-export default function Post({ data = {}, preview }) {
+export default function Project({ project, moreProjects }) {
   const router = useRouter()
-
-  const slug = data?.project?.slug
-  const {
-    data: { project, morePosts },
-  } = usePreviewSubscription(projectQuery, {
-    params: { slug },
-    initialData: data,
-    enabled: preview && slug,
-  })
-
+  const slug = project?.slug
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />
   }
 
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <Header />
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>
-                  {project.title} | Next.js Blog Example with
-                </title>
-                {project.coverImage?.asset?._ref && (
-                  <meta
-                    key="ogImage"
-                    property="og:image"
-                    content={urlForImage(project.coverImage)
-                      .width(1200)
-                      .height(627)
-                      .fit('crop')
-                      .url()}
-                  />
-                )}
-              </Head>
-              <PostHeader
-                title={project.title}
-                coverImage={project.coverImage}
-                date={project.date}
+        <article>
+          <Head>
+            <title>{project.title} &ndash; Eric Price</title>
+            {project.coverImage?.asset?._ref && (
+              <meta
+                key="ogImage"
+                property="og:image"
+                content={urlForImage(project.coverImage)
+                  .width(1200)
+                  .height(627)
+                  .fit('crop')
+                  .url()}
               />
-              <PostBody content={project.content} />
-            </article>
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          </>
-        )}
+            )}
+          </Head>
+          <PostHeader
+            title={project.title}
+            coverImage={project.coverImage}
+            date={project.date}
+          />
+          <PostBody content={project.content} />
+        </article>
       </Container>
     </Layout>
   )
 }
 
-export async function getStaticProps({ params, preview = false }) {
-  const { project, morePosts } = await getClient(preview).fetch(indexQuery, {
+export async function getStaticProps({ params }) {
+  const { project, moreProjects } = await client.fetch(projectQuery, {
     slug: params.slug,
   })
 
   return {
     props: {
-      preview,
-      data: {
-        project,
-        morePosts: overlayDrafts(morePosts),
-      },
+      project,
+      moreProjects,
     },
-    // If webhooks isn't setup then attempt to re-generate in 1 minute intervals
     revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
   }
 }
 
 export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(projectSlugsQuery)
+  const paths = await client.fetch(projectSlugsQuery)
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,
