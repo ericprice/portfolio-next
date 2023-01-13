@@ -1,6 +1,10 @@
 .site-header {
   margin-bottom: var(--leading);
   
+  #project & {
+    margin-bottom: 0;
+  }
+  
   .site-header-title,
   .site-header-info {
     text-transform: uppercase;
@@ -22,13 +26,17 @@
       pointer-events: none;
     }
     
-    #info & {
+    #info &,
+    #project & {
       background: transparent;
-      color: $accent;
       
       &::after {
         display: none;
       }
+    }
+    
+    #info & {
+      color: $accent;
     }
   }
   
@@ -39,11 +47,13 @@
       pointer-events: none;
     }
     
-    #info & {
-      position: absolute;
+    #info &,
+    #project & {
+      position: relative;
+      padding: 0;
       
       a::after {
-        content: 'H';
+        content: 'Close';
         position: fixed;
         top: 0;
         right: 0;
@@ -61,13 +71,24 @@
         background-image: url('/images/close-white.svg');
       }
     }
+    
+    #project & {
+      a::after {
+        background-image: url('/images/close-black.svg');
+      }
+      
+      a:hover::after {
+        background-image: url('/images/close-gray.svg');
+      }
+    }
   }
   
   .site-header-info {
     right: 0;
     text-align: right;
     
-    #info & {
+    #info &,
+    #project & {
       display: none;
     }
   }
@@ -75,8 +96,9 @@
   .site-header-subtitle {
     margin-top: var(--leading);
     
-    #info & {
-      visibility: hidden;
+    #info &,
+    #project & {
+      display: none;
     }
   }
 }

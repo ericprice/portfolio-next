@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useEffect } from 'react';
 import Container from '../components/container'
 import ProjectsList from '../components/projects-list'
 import Header from '../components/header'
@@ -7,18 +8,19 @@ import { indexQuery } from '../lib/queries'
 import { client } from '../lib/sanity.server'
 
 export default function Index({ allProjects }) {
+  useEffect( () => { document.querySelector('body').classList.remove('project') } );
   return (
-    <>
-      <Layout>
-        <Head>
-          <title>Eric Price</title>
-        </Head>
-        <Container pageName="home">
-          <Header />
-          {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
-        </Container>
-      </Layout>
-    </>
+    <Layout>
+      <Head>
+        <title>Eric Price</title>
+      </Head>
+      <Container pageName="home">
+        <Header />
+        <div className="featured">
+        </div>
+        {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
+      </Container>
+    </Layout>
   )
 }
 

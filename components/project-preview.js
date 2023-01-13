@@ -1,9 +1,7 @@
 import Date from '../components/date'
 import CoverImage from './cover-image'
 import Link from 'next/link'
-import { urlForImage, usePreviewSubscription } from '../lib/sanity'
-import { sanityClient, getClient, overlayDrafts } from '../lib/sanity.server'
-import { parseISO, format } from 'date-fns'
+import { urlForImage } from '../lib/sanity'
 
 export default function ProjectPreview({
   title,
@@ -35,28 +33,28 @@ export default function ProjectPreview({
           <a className="project-preview-content project-preview-external-link" href={url} target="_new" data-url-label={urlLabel}>
             <Date dateString={date} />
             <div className="project-preview-content-inner">
-              <h3 className="project-preview-item project-preview-title">
+              <h3 className="project-meta-header-item project-meta-header-title">
                 {title}
               </h3>
               {client?.name && !sameTitleAndClient ? (
-                <div className="project-preview-item project-preview-client">
+                <div className="project-meta-header-item project-meta-header-client">
                   {client.name}
                 </div>
               ) : (
-                <div className="project-preview-item project-preview-client"></div>
+                <div className="project-meta-header-item project-meta-header-client"></div>
               )}
               {categories && (
-                <ul className="project-preview-item project-preview-categories">
+                <ul className="project-meta-header-item project-meta-header-categories">
                   {categories.map(category => <li key={category.name}>{category.name}</li>)}
                 </ul>
               )}
               {collaborators && (
-                <ul className="project-preview-item project-preview-collaborators">
+                <ul className="project-meta-header-item project-meta-header-collaborators">
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
               {/* {media && (
-                <ul className="project-preview-item project-preview-media">
+                <ul className="project-meta-header-item project-meta-header-media">
                   {media.map(mediaItem =>
                     urlForImage(mediaItem.asset._ref).width(2000).url()
                   )}
@@ -72,28 +70,28 @@ export default function ProjectPreview({
           <Link className="project-preview-content" href={`/projects/${slug}`}>
             <Date dateString={date} />
             <div className="project-preview-content-inner">
-              <h3 className="project-preview-item project-preview-title">
+              <h3 className="project-meta-header-item project-meta-header-title">
                 {title}
               </h3>
               {client?.name && !sameTitleAndClient ? (
-                <div className="project-preview-item project-preview-client">
+                <div className="project-meta-header-item project-meta-header-client">
                   {client.name}
                 </div>
               ) : (
-                <div className="project-preview-item project-preview-client"></div>
+                <div className="project-meta-header-item project-meta-header-client"></div>
               )}
               {categories && (
-                <ul className="project-preview-item project-preview-categories">
+                <ul className="project-meta-header-item project-meta-header-categories">
                   {categories.map(category => <li key={category.name}>{category.name}</li>)}
                 </ul>
               )}
               {collaborators && (
-                <ul className="project-preview-item project-preview-collaborators">
+                <ul className="project-meta-header-item project-meta-header-collaborators">
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
               {/* {media && (
-                <ul className="project-preview-item project-preview-media">
+                <ul className="project-meta-header-item project-meta-header-media">
                   {media.map(mediaItem =>
                     urlForImage(mediaItem.asset._ref).width(2000).url()
                   )}

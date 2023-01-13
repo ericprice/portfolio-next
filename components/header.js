@@ -4,7 +4,7 @@ export default function Intro() {
   return (
     <header className="site-header">
       <h1 className="site-header-title">
-        <Link href="/">
+        <Link href="/" scroll={false}>
           Eric Price
         </Link>
       </h1>

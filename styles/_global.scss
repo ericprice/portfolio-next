@@ -28,10 +28,10 @@ $accent: #fff;
 }
 
 html {
-  font-size: 12px;
+  font-size: 13px;
 
   @include breakpoint($m-up) {
-    font-size: 1.333vw;
+    font-size: 1.28vw;
   }
 
   @include breakpoint($xl) {
@@ -49,6 +49,10 @@ body {
   text-size-adjust: none;
   text-rendering: optimizeLegibility;
   @include antialiased;
+  
+  &.project {
+    background: $accent;
+  }
 }
 
 img,
@@ -83,6 +87,14 @@ a {
   &:hover {
     color: $accent;
   }
+  
+  #project & {
+    cursor: url('/images/cursor-gray.svg') 6 6, auto;
+    cursor: -webkit-image-set(
+      url('/images/cursor-gray.svg') 1x,
+      url('/images/cursor-gray@2x.svg') 2x
+    ) 6 6, auto;
+  }
 }
 
 button {
@@ -103,9 +115,31 @@ textarea {
   letter-spacing: var(--letter-spacing);
 }
 
-.lining {
-  vertical-align: .09em;
-  line-height: 0;
+.text {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol {
+    margin-bottom: calc(var(--leading) / 2);
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: var(--leading);
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 }
 
 .site-container {
@@ -137,39 +171,210 @@ textarea {
       }
     }
   }
+  
+  &#project {
+    //background: $accent;
+    color: $main-color;
+    cursor: url('/images/cursor-black.svg') 6 6, auto;
+    cursor: -webkit-image-set(
+      url('/images/cursor-black.svg') 1x,
+      url('/images/cursor-black@2x.svg') 2x
+    ) 6 6, auto;
+    
+    a {
+      color: $main-color;
+      
+      &:hover {
+        color: $main-bg;
+      }
+    }
+  }
+}
+
+.project-meta-header {
+  display: grid;
+  gap: 0 var(--gap);
+  grid-template-columns: repeat(12, 1fr);
+  
+  #home & {
+    position: sticky;
+    top: calc(var(--outer-margin-y) + var(--leading));
+    z-index: 50;
+    background: $main-bg;
+    border-bottom: 1px solid $main-color;
+    padding-bottom: calc(var(--leading) / 3);
+  }
+  
+  .project-meta-header-item-heading {
+    margin-bottom: calc(var(--leading) / 2);
+  }
+}
+
+.project-meta-header-date,
+.project-meta-header-client,
+.project-meta-header-categories,
+.project-meta-header-collaborators {
+  grid-column: span 2;
+}
+
+.project-meta-header-title {
+  grid-column: span 4;
+}
+
+.project-meta-header-date {
+  position: relative;
+  grid-column: span 2;
+  font-variant-numeric: tabular-nums;
+  
+  @include breakpoint($m-up) {
+    grid-column: span 2;
+  }
+  
+  #home & {
+    padding: calc(var(--leading) / 3 + 1px) 0;
+    visibility: hidden;
+    margin-top: -1px;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% + var(--gap));
+      border-top: 1px solid $main-color;
+    }
+  }
+  
+  #home .projects-list-header & {
+    visibility: visible;
+    padding: 0;
+    margin: 0;
+    
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.project-meta-header-title {
+  grid-column: span 6;
+  
+  @include breakpoint($s) {
+    order: 1;
+    
+    .projects-list-header &::after {
+      content: '/client';
+    }
+  }
+  
+  @include breakpoint($m-up) {
+    grid-column: span 4;
+  }
+}
+
+.project-meta-header-client,
+.project-meta-header-categories,
+.project-meta-header-collaborators {
+  grid-column: span 10;
+  
+  @include breakpoint($m-up) {
+    grid-column: span 2;
+  }
+  
+  li {
+    display: inline;
+    
+    &::after {
+      content: ', ';
+    }
+    
+    &:last-child::after {
+      content: '';
+    }
+  }
+}
+
+.project-meta-header-client {
+  @include breakpoint($s) {
+    order: 3;
+    
+    .projects-list-header & {
+      display: none;
+    }
+  }
+}
+
+.project-meta-header-categories {
+  @include breakpoint($s) {
+    grid-column: span 4;
+    order: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  #project & {
+    li {
+      display: block;
+      
+      &::after {
+        content: '';
+      }
+      
+      &:nth-child(1)::before {
+        content: '① ';
+      }
+      
+      &:nth-child(2)::before {
+        content: '② ';
+      }
+      
+      &:nth-child(3)::before {
+        content: '③ ';
+      }
+      
+      &:nth-child(4)::before {
+        content: '④ ';
+      }
+      
+      &:nth-child(5)::before {
+        content: '⑤ ';
+      }
+      
+      &:nth-child(6)::before {
+        content: '⑥ ';
+      }
+      
+      &:nth-child(7)::before {
+        content: '⑦ ';
+      }
+      
+      &:nth-child(8)::before {
+        content: '⑧ ';
+      }
+      
+      &:nth-child(9)::before {
+        content: '⑨ ';
+      }
+      
+      &:hover::before {
+        content: '● ';
+      }
+    }
+  }
+}
+
+.project-meta-header-collaborators {
+  @include breakpoint($s) {
+    display: none;
+    order: 4;
+  }
 }
 
 .projects-list {
   position: relative;
   
-  .projects-list-header {
-    position: sticky;
-    top: calc(var(--outer-margin-y) + var(--leading));
-    z-index: 50;
-    display: none;
-    gap: 0 var(--gap);
-    grid-template-columns: repeat(12, 1fr);
-    padding-bottom: calc(var(--leading) / 3);
-    background: $main-bg;
-    border-bottom: 1px solid $main-color;
-    
-    @include breakpoint($m-up) {
-      display: grid;
-    }
-    
-    .projects-list-header-date,
-    .projects-list-header-client,
-    .projects-list-header-categories,
-    .projects-list-header-collaborators {
-      grid-column: span 2;
-    }
-    
-    .projects-list-header-title {
-      grid-column: span 4;
-    }
-  }
-  
-  .project-preview[data-start-of-year=true] .project-preview-date {
+  #home & .project-preview[data-start-of-year=true] .project-meta-header-date {
     visibility: visible;
   }
   
@@ -182,11 +387,11 @@ textarea {
     .project-preview-content-inner {
       display: grid;
       gap: 0 var(--gap);
-      grid-template-columns: repeat(11, 1fr);
+      grid-template-columns: repeat(10, 1fr);
       padding: calc(var(--leading) / 3) 0;
       border-top: 1px solid $main-color;
       margin-top: -1px;
-      grid-column: span 11;
+      grid-column: span 10;
       
       @include breakpoint($m-up) {
         grid-column: span 10;
@@ -234,7 +439,7 @@ textarea {
             display: block;
           }
           
-          .project-preview-date-inner {
+          .project-meta-header-date-inner {
             visibility: hidden;
           }
         }
@@ -246,90 +451,11 @@ textarea {
       }
     }
     
-    .project-preview-date {
-      position: relative;
-      grid-column: span 1;
-      padding: calc(var(--leading) / 3 + 1px) 0;
-      font-variant-numeric: tabular-nums;
-      visibility: hidden;
-      margin-top: -1px;
-      
-      @include breakpoint($m-up) {
-        grid-column: span 2;
-      }
-      
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: calc(100% + var(--gap));
-        border-top: 1px solid $main-color;
-      }
-    }
-    
-    .project-preview-title {
-      grid-column: span 7;
-      
-      @include breakpoint($s) {
-        order: 1;
-      }
-      
-      @include breakpoint($m-up) {
-        grid-column: span 4;
-      }
-    }
-    
-    .project-preview-client,
-    .project-preview-categories,
-    .project-preview-collaborators {
-      grid-column: span 11;
-      
-      @include breakpoint($m-up) {
-        grid-column: span 2;
-      }
-      
-      li {
-        display: inline;
-        
-        &::after {
-          content: ', ';
-        }
-        
-        &:last-child::after {
-          content: '';
-        }
-      }
-    }
-    
-    .project-preview-client {
-      @include breakpoint($s) {
-        order: 3;
-      }
-    }
-    
-    .project-preview-categories {
-      @include breakpoint($s) {
-        grid-column: span 4;
-        order: 2;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
-    
-    .project-preview-collaborators {
-      @include breakpoint($s) {
-        display: none;
-        order: 4;
-      }
-    }
-    
     .project-preview-thumbnail {
       position: fixed;
-      top: 4rem;
+      top: 6rem;
       right: var(--outer-margin-x);
-      bottom: 4rem;
+      bottom: 6rem;
       left: var(--outer-margin-x);
       z-index: 100;
       pointer-events: none;

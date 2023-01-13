@@ -20,22 +20,32 @@
   
   .info-statement {
     grid-column: span 12;
-    margin: -.06em 0 calc(var(--leading) * 1.125) -.06em;
-    font-size: 2.125rem;
+    margin: -.06em 0 1.1em -.06em;
+    font-size: 1.75rem;
     line-height: 1.1em;
     letter-spacing: -.02em;
     word-spacing: -.02em;
+    
+    @include breakpoint($m-up) {
+      font-size: 2.125rem;
+      line-height: 1.1em;
+    }
   }
   
   .info-heading {
-    margin-bottom: var(--leading);
+    margin-top: var(--leading);
+    margin-bottom: calc(var(--leading) / 2);
+    
+    &:first-child {
+      margin-top: 0;
+    }
   }
   
   .info-content {
     margin-bottom: var(--leading);
     
     p {
-      margin-bottom: var(--leading);
+      margin-bottom: calc(var(--leading) / 2);
     }
     
     &.has-columns {
@@ -64,6 +74,19 @@
     }
   }
   
+  .info-section-contact {
+    @include breakpoint($s) {
+      .info-content {
+        column-count: 2;
+        column-gap: var(--gap);
+        
+        p {
+          break-inside: avoid;
+        }
+      }
+    }
+  }
+  
   .info-section-clients {
     .info-content {
       column-count: 2;
@@ -73,12 +96,22 @@
   
   .info-section-press {
     ul {
-      margin-bottom: var(--leading);
+      margin-bottom: calc(var(--leading) / 2);
+    }
+    
+    @include breakpoint($s) {
+      .info-content {
+        column-count: 2;
+        column-gap: var(--gap);
+        
+        .info-content-section {
+          break-inside: avoid;
+        }
+      }
     }
   }
   
-  .info-footer {
-    font-size: .667rem;
-    line-height: var(--leading);
+  .info-content-section {
+    margin-bottom: var(--leading);
   }
 }

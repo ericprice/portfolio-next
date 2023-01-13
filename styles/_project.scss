@@ -1,0 +1,41 @@
+#project {
+  .project-meta-header {
+    min-height: 50vh;
+  }
+  
+  .project-preview-thumbnail {
+    position: fixed;
+    top: 6rem;
+    right: var(--outer-margin-x);
+    bottom: 6rem;
+    left: var(--outer-margin-x);
+    z-index: -1;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    transition: opacity .25s ease-in-out 0s;
+    mix-blend-mode: difference;
+  }
+  
+  .project-content {
+    z-index: 400;
+    display: grid;
+    gap: 0 var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+    border-top: 1px solid $main-color;
+    padding-top: calc(var(--leading) / 3);
+    margin-top: calc(50vh - 4rem);
+    min-height: calc(100vh - var(--outer-margin-y) + 1px);
+    background: $accent;
+  }
+  
+  .project-text {
+    grid-column: span 12;
+    
+    @include breakpoint($m-up) {
+      padding-right: 12.5%;
+      grid-column: span 6;
+    }
+  }
+}

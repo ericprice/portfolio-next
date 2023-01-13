@@ -5,12 +5,12 @@ export default function ProjectsList({ projects }) {
   var previousDate = 0
   return (
     <div className="projects-list">
-      <header className="projects-list-header">
-        <h2 className="projects-list-header-item projects-list-header-date">Date</h2>
-        <h2 className="projects-list-header-item projects-list-header-title">Project</h2>
-        <h2 className="projects-list-header-item projects-list-header-client">Client</h2>
-        <h2 className="projects-list-header-item projects-list-header-categories">Type</h2>
-        <h2 className="projects-list-header-item projects-list-header-collaborators">Collaborator</h2>
+      <header className="project-meta-header projects-list-header">
+        <h2 className="project-meta-header-item project-meta-header-date">Date</h2>
+        <h2 className="project-meta-header-item project-meta-header-title">Project</h2>
+        <h2 className="project-meta-header-item project-meta-header-client">Client</h2>
+        <h2 className="project-meta-header-item project-meta-header-categories">Type</h2>
+        <h2 className="project-meta-header-item project-meta-header-collaborators">Collaborator</h2>
       </header>
       {projects.map((project) => {
         var currentDate = format(parseISO(project.date), 'yyyy')
