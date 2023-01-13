@@ -1,3 +1,3 @@
-export default function Container({ children }) {
-  return <div className="site-container">{children}</div>
+export default function Container({ children, pageName }) {
+  return <div className="site-container" id={pageName}>{children}</div>
 }

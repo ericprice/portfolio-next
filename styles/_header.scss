@@ -21,18 +21,62 @@
       background: linear-gradient(to bottom, rgba($main-bg, 1) 0%,rgba($main-bg, 0) 100%);
       pointer-events: none;
     }
+    
+    #info & {
+      background: transparent;
+      color: $accent;
+      
+      &::after {
+        display: none;
+      }
+    }
   }
   
   .site-header-title {
     left: 0;
+    
+    #home & {
+      pointer-events: none;
+    }
+    
+    #info & {
+      position: absolute;
+      
+      a::after {
+        content: 'H';
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: var(--outer-margin-y) var(--outer-margin-x) 0;
+        z-index: 100;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: url('/images/close-gray.svg') center center no-repeat;
+        background-size: .825rem auto;
+        text-align: right;
+        @include hide-text;
+      }
+      
+      a:hover::after {
+        background-image: url('/images/close-white.svg');
+      }
+    }
   }
   
   .site-header-info {
     right: 0;
     text-align: right;
+    
+    #info & {
+      display: none;
+    }
   }
   
   .site-header-subtitle {
     margin-top: var(--leading);
+    
+    #info & {
+      visibility: hidden;
+    }
   }
 }

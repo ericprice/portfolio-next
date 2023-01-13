@@ -18,7 +18,7 @@ export default function Index({ allProjects: initialAllProjects, preview }) {
         <Head>
           <title>Eric Price</title>
         </Head>
-        <Container>
+        <Container pageName="home">
           <Header />
           {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
         </Container>

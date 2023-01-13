@@ -1,50 +1,42 @@
-.info {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 900;
-  background: $main-color;
-  color: $main-bg;
-  padding: var(--outer-margin-y) var(--outer-margin-x);
-  gap: 0 var(--gap);
-  grid-template-columns: repeat(12, 1fr);
-  overflow: auto;
-  
-  a,
-  button {
-    color: $main-bg;
-  }
-  
-  .about-active & {
+#info {
+  .info {
     display: grid;
-  }
-  
-  .info-toggle {
-    position: fixed;
-    top: var(--outer-margin-y);
-    right: var(--outer-margin-x);
-    z-index: 901;
-    text-transform: uppercase;
+    gap: 0 var(--gap);
+    grid-template-columns: repeat(12, 1fr);
   }
   
   .info-section {
     grid-column: span 12;
+    margin-bottom: var(--leading);
     
     @include breakpoint($m-up) {
-      grid-column: span 6;
+      grid-column: span 3;
+      
+      &.info-section-clients {
+        grid-column: span 6;
+      }
     }
   }
   
+  .info-statement {
+    grid-column: span 12;
+    margin: -.06em 0 calc(var(--leading) * 1.125) -.06em;
+    font-size: 2.125rem;
+    line-height: 1.1em;
+    letter-spacing: -.02em;
+    word-spacing: -.02em;
+  }
+  
   .info-heading {
-    text-transform: uppercase;
     margin-bottom: var(--leading);
   }
   
   .info-content {
     margin-bottom: var(--leading);
+    
+    p {
+      margin-bottom: var(--leading);
+    }
     
     &.has-columns {
       display: grid;
@@ -77,5 +69,16 @@
       column-count: 2;
       column-gap: var(--gap);
     }
+  }
+  
+  .info-section-press {
+    ul {
+      margin-bottom: var(--leading);
+    }
+  }
+  
+  .info-footer {
+    font-size: .667rem;
+    line-height: var(--leading);
   }
 }

@@ -20,10 +20,6 @@ $accent: #fff;
   --letter-spacing: .02em;
 }
 
-::selection {
-  background: rgba($accent, .95);
-}
-
 *,
 *::before,
 *::after {
@@ -44,7 +40,6 @@ html {
 }
 
 body {
-  padding: var(--outer-margin-y) var(--outer-margin-x);
   background: $main-bg;
   color: $main-color;
   font-family: 'Monument Grotesk', sans-serif;
@@ -54,11 +49,6 @@ body {
   text-size-adjust: none;
   text-rendering: optimizeLegibility;
   @include antialiased;
-  cursor: url('/images/cursor-black.svg'), auto;
-  cursor: -webkit-image-set(
-    url('/images/cursor-black.svg') 1x,
-    url('/images/cursor-black@2x.svg') 2x
-  ) 6 6, auto;
 }
 
 img,
@@ -84,7 +74,7 @@ b {
 
 a {
   color: $main-color;
-  cursor: url('/images/cursor-white.svg'), auto;
+  cursor: url('/images/cursor-white.svg') 6 6, auto;
   cursor: -webkit-image-set(
     url('/images/cursor-white.svg') 1x,
     url('/images/cursor-white@2x.svg') 2x
@@ -118,6 +108,37 @@ textarea {
   line-height: 0;
 }
 
+.site-container {
+  padding: var(--outer-margin-y) var(--outer-margin-x);
+  min-height: 100vh;
+  
+  &#home {
+    cursor: url('/images/cursor-black.svg') 6 6, auto;
+    cursor: -webkit-image-set(
+      url('/images/cursor-black.svg') 1x,
+      url('/images/cursor-black@2x.svg') 2x
+    ) 6 6, auto;
+  }
+  
+  &#info {
+    background: $main-color;
+    color: $main-bg;
+    cursor: url('/images/cursor-gray.svg') 6 6, auto;
+    cursor: -webkit-image-set(
+      url('/images/cursor-gray.svg') 1x,
+      url('/images/cursor-gray@2x.svg') 2x
+    ) 6 6, auto;
+    
+    a {
+      color: $main-bg;
+      
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+
 .projects-list {
   position: relative;
   
@@ -125,12 +146,16 @@ textarea {
     position: sticky;
     top: calc(var(--outer-margin-y) + var(--leading));
     z-index: 50;
-    display: grid;
+    display: none;
     gap: 0 var(--gap);
     grid-template-columns: repeat(12, 1fr);
     padding-bottom: calc(var(--leading) / 3);
     background: $main-bg;
     border-bottom: 1px solid $main-color;
+    
+    @include breakpoint($m-up) {
+      display: grid;
+    }
     
     .projects-list-header-date,
     .projects-list-header-client,
@@ -157,34 +182,81 @@ textarea {
     .project-preview-content-inner {
       display: grid;
       gap: 0 var(--gap);
-      grid-template-columns: repeat(10, 1fr);
+      grid-template-columns: repeat(11, 1fr);
       padding: calc(var(--leading) / 3) 0;
       border-top: 1px solid $main-color;
       margin-top: -1px;
-      grid-column: span 10;
+      grid-column: span 11;
+      
+      @include breakpoint($m-up) {
+        grid-column: span 10;
+        grid-template-columns: repeat(10, 1fr);
+      }
+    }
+    
+    &::before {
+      display: none;
+      position: absolute;
+      top: calc(var(--leading) / 3);
+      left: 0;
+      width: 12rem;
+      content: '→ Case study';
+      pointer-events: none;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      
+      @include breakpoint($xl) {
+        width: auto;
+      }
+    }
+    
+    &.project-preview-external-link {
+      &:hover {
+        color: #0ff;
+        
+        cursor: url('/images/cursor-teal.svg') 6 6, auto;
+        cursor: -webkit-image-set(
+          url('/images/cursor-teal.svg') 1x,
+          url('/images/cursor-teal@2x.svg') 2x
+        ) 6 6, auto;
+      }
+      
+      &::before {
+        content: '↗ ' attr(data-url-label);
+      }
     }
     
     &:hover {
-      &::before {
-        position: absolute;
-        top: calc(var(--leading) / 3);
-        left: 0;
-        content: '↗ Case study';
-        pointer-events: none;
-      }
-      
-      .project-preview-date-inner {
-        visibility: hidden;
+      @media (hover: hover) {
+        @include breakpoint($m-up) {
+          &::before {
+            display: block;
+          }
+          
+          .project-preview-date-inner {
+            visibility: hidden;
+          }
+        }
+        
+        .project-preview-thumbnail {
+          transition: opacity .4s ease-in .2s;
+          opacity: .75;
+        }
       }
     }
     
     .project-preview-date {
       position: relative;
-      grid-column: span 2;
-      padding: calc(var(--leading) / 3) 0;
+      grid-column: span 1;
+      padding: calc(var(--leading) / 3 + 1px) 0;
       font-variant-numeric: tabular-nums;
       visibility: hidden;
       margin-top: -1px;
+      
+      @include breakpoint($m-up) {
+        grid-column: span 2;
+      }
       
       &::after {
         content: '';
@@ -197,13 +269,25 @@ textarea {
     }
     
     .project-preview-title {
-      grid-column: span 4;
+      grid-column: span 7;
+      
+      @include breakpoint($s) {
+        order: 1;
+      }
+      
+      @include breakpoint($m-up) {
+        grid-column: span 4;
+      }
     }
     
     .project-preview-client,
     .project-preview-categories,
     .project-preview-collaborators {
-      grid-column: span 2;
+      grid-column: span 11;
+      
+      @include breakpoint($m-up) {
+        grid-column: span 2;
+      }
       
       li {
         display: inline;
@@ -218,8 +302,43 @@ textarea {
       }
     }
     
+    .project-preview-client {
+      @include breakpoint($s) {
+        order: 3;
+      }
+    }
+    
+    .project-preview-categories {
+      @include breakpoint($s) {
+        grid-column: span 4;
+        order: 2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    
+    .project-preview-collaborators {
+      @include breakpoint($s) {
+        display: none;
+        order: 4;
+      }
+    }
+    
     .project-preview-thumbnail {
-      position: absolute;
+      position: fixed;
+      top: 4rem;
+      right: var(--outer-margin-x);
+      bottom: 4rem;
+      left: var(--outer-margin-x);
+      z-index: 100;
+      pointer-events: none;
+      opacity: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      transition: opacity .25s ease-in-out 0s;
+      mix-blend-mode: screen;
     }
   }
 }
