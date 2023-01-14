@@ -1,17 +1,23 @@
 import Date from '../components/date'
 import CoverImage from './cover-image'
+import CoverFile from './cover-file'
+import FeaturedImage from './featured-image'
+import FeaturedFile from './featured-file'
 import Link from 'next/link'
 import { urlForImage } from '../lib/sanity'
 
 export default function ProjectPreview({
   title,
+  featuredImage,
+  featuredFile,
   coverImage,
+  coverFile,
+  media,
   date,
   slug,
   client,
   categories,
   collaborators,
-  media,
   url,
   urlLabel,
   startOfYear
@@ -53,14 +59,7 @@ export default function ProjectPreview({
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
-              {/* {media && (
-                <ul className="project-meta-header-item project-meta-header-media">
-                  {media.map(mediaItem =>
-                    urlForImage(mediaItem.asset._ref).width(2000).url()
-                  )}
-                  {urlForImage(media[0].asset._ref).width(2000).url()}
-                </ul>
-              )} */}
+              <FeaturedImage slug={slug} title={title} image={featuredImage} />
             </div>
             <CoverImage slug={slug} title={title} image={coverImage} />
           </a>
@@ -90,14 +89,7 @@ export default function ProjectPreview({
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
-              {/* {media && (
-                <ul className="project-meta-header-item project-meta-header-media">
-                  {media.map(mediaItem =>
-                    urlForImage(mediaItem.asset._ref).width(2000).url()
-                  )}
-                  {urlForImage(media[0].asset._ref).width(2000).url()}
-                </ul>
-              )} */}
+              <FeaturedImage slug={slug} title={title} image={featuredImage} />
             </div>
             <CoverImage slug={slug} title={title} image={coverImage} />
           </Link>

@@ -6,4 +6,7 @@ module.exports = {
       { hostname: 'source.unsplash.com' },
     ],
   },
+  experimental: {
+    scrollRestoration: true,
+  },
 }

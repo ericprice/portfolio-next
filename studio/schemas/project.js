@@ -70,6 +70,19 @@ export default {
       type: 'text',
     },
     {
+      name: 'featuredImage',
+      title: 'Featured Image',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+    },
+    {
+      name: 'featuredFile',
+      title: 'Featured File',
+      type: 'file',
+    },
+    {
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',
@@ -80,6 +93,19 @@ export default {
     {
       name: 'coverFile',
       title: 'Cover File',
+      type: 'file',
+    },
+    {
+      name: 'innerCoverImage',
+      title: 'Inner Cover Image',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+    },
+    {
+      name: 'innerCoverFile',
+      title: 'Inner Cover File',
       type: 'file',
     },
     {

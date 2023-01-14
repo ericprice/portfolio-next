@@ -26,13 +26,16 @@ export default function ProjectsList({ projects }) {
           <ProjectPreview
             key={project.slug}
             title={project.title}
+            featuredImage={project.featuredImage}
+            featuredFile={project.featuredFile}
             coverImage={project.coverImage}
+            coverFile={project.coverFile}
+            media={project.media}
             date={project.date}
             slug={project.slug}
             client={project.client}
             categories={project.categories}
             collaborators={project.collaborators}
-            media={project.media}
             url={project.url}
             urlLabel={project.urlLabel}
             startOfYear={startOfYear}

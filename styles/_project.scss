@@ -1,6 +1,7 @@
 #project {
   .project-meta-header {
     min-height: 50vh;
+    grid-auto-rows: min-content;
   }
   
   .project-preview-thumbnail {

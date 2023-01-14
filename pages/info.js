@@ -11,11 +11,11 @@ export default function Info() {
       </Head>
       <Container pageName="info">
         <Header />
-        <div class="info">
-          <h2 class="info-statement">Eric Price is a Brooklyn-based graphic designer and programmer specializing in identity, web, and publishing for arts and culture.</h2>
-          <section class="info-section info-section-contact">
-            <h3 class="info-heading">Contact</h3>
-            <div class="info-content">
+        <div className="info">
+          <h2 className="info-statement">Eric Price is a Brooklyn-based graphic designer and programmer specializing in identity, web, and publishing for arts and culture.</h2>
+          <section className="info-section info-section-contact">
+            <h3 className="info-heading">Contact</h3>
+            <div className="info-content">
               <p>Studio Eric Price<br />543 Court Street #3<br />Brooklyn, NY 11231 USA<br />+1 612 618 0789<br /><a href="mailto:info@ericprice.info">info@ericprice.info</a></p>
               <ul>
                 <li><a href="https://www.are.na/eric-price">Are.na</a></li>
@@ -24,9 +24,9 @@ export default function Info() {
               </ul>
             </div>
           </section>
-          <section class="info-section info-section-clients">
-            <h3 class="info-heading">Clients &amp; collaborators</h3>
-            <div class="info-content">
+          <section className="info-section info-section-clients">
+            <h3 className="info-heading">Clients &amp; collaborators</h3>
+            <div className="info-content">
               <ul>
                 <li>Askov Finlayson</li>
                 <li>Ballroom Marfa</li>
@@ -64,23 +64,23 @@ export default function Info() {
               </ul>
             </div>
           </section>
-          <section class="info-section info-section-press">
-            <div class="info-content">
-              <section class="info-content-section">
-                <h3 class="info-heading">2016</h3>
+          <section className="info-section info-section-press">
+            <div className="info-content">
+              <section className="info-content-section">
+                <h3 className="info-heading">2016</h3>
                 <ul>
                   <li>Interview, <em>Gratuitous Type</em></li>
                 </ul>
               </section>
-              <section class="info-content-section">
-                <h3 class="info-heading">2013</h3>
+              <section className="info-content-section">
+                <h3 className="info-heading">2013</h3>
                 <ul>
                   <li>“20 Under 30” New Visual Artist, <em>Print</em> Magazine</li>
                   <li>Interview, <em>Grafill</em></li>
                 </ul>
               </section>
-              <section class="info-content-section">
-                <h3 class="info-heading">2012</h3>
+              <section className="info-content-section">
+                <h3 className="info-heading">2012</h3>
                 <ul>
                   <li>Regional Design Annual, <em>Print</em> Magazine</li>
                   <li>Design Show, AIGA Minnesota</li>
@@ -88,21 +88,21 @@ export default function Info() {
                   <li>PowerPoint, Art of This Gallery</li>
                 </ul>
               </section>
-              <section class="info-content-section">
-                <h3 class="info-heading">2011</h3>
+              <section className="info-content-section">
+                <h3 className="info-heading">2011</h3>
                 <ul>
                   <li>The Year in Design That Works, <em>Good</em> Magazine</li>
                 </ul>
               </section>
-              <section class="info-content-section">
-                <h3 class="info-heading">2007</h3>
+              <section className="info-content-section">
+                <h3 className="info-heading">2007</h3>
                 <ul>
                   <li>Media Best Award, Minnesota Broadcasters Association</li>
                   <li>B.S. Graphic Design, University of Minnesota Twin Cities</li>
                 </ul>
               </section>
-              <section class="info-content-section">
-                <h3 class="info-heading">2006</h3>
+              <section className="info-content-section">
+                <h3 className="info-heading">2006</h3>
                 <ul>
                   <li>Best Campus Publication of the Year, Independent Press Association</li>
                 </ul>
