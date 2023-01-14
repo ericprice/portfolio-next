@@ -25,7 +25,6 @@ export default function Project({ project, moreProjects }) {
   return (
     <Layout>
       <Head>
-        <title>{project.title + ' – Eric Price'}</title>
         {project.coverImage?.asset?._ref && (
           <meta
             key="ogImage"
@@ -92,7 +91,7 @@ export default function Project({ project, moreProjects }) {
           {project.media && (
             <ul className="project-meta-header-item project-meta-header-media">
               {project.media.map(mediaItem =>
-                <img src={urlForImage(mediaItem.asset._ref).width(2000).url()} />
+                <img key={mediaItem.asset._ref} src={urlForImage(mediaItem.asset._ref).width(2000).url()} />
               )}
             </ul>
           )}
