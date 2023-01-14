@@ -25,6 +25,7 @@ export default function Project({ project, moreProjects }) {
   return (
     <Layout>
       <Head>
+        {/* <title>{project.title + ' – Eric Price'}</title> */}
         {project.coverImage?.asset?._ref && (
           <meta
             key="ogImage"
@@ -77,7 +78,9 @@ export default function Project({ project, moreProjects }) {
             </div>
           )}
         </header>
-        <CoverImage image={project.innerCoverImage} />
+        {project.innerCoverImage && (
+          <CoverImage image={project.innerCoverImage} />
+        )}
         <div className="project-content">
           <article className="project-text text">
             <h3 className="project-text-heading">Case study</h3>
