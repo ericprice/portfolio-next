@@ -23,9 +23,9 @@ export default function Project({ project, moreProjects }) {
   useEffect( () => { document.querySelector('body').classList.add('project') } );
 
   return (
-    <Layout>
+    <>
       <Head>
-        {/* <title>{project.title + ' – Eric Price'}</title> */}
+        <title>{project.title + ' – Eric Price'}</title>
         {project.coverImage?.asset?._ref && (
           <meta
             key="ogImage"
@@ -38,69 +38,72 @@ export default function Project({ project, moreProjects }) {
           />
         )}
       </Head>
-      <Container pageName="project">
-        <Header />
-        <header className="project-meta-header">
-          <div className="project-meta-header-item project-meta-header-date">
-            <h3 className="project-meta-header-item-heading">Date</h3>
-            <Date dateString={project.date} />
-          </div>
-          <div className="project-meta-header-item project-meta-header-title">
-            <h3 className="project-meta-header-item-heading">Project</h3>
-            <h2 className="project-title">{project.title}</h2>
-          </div>
-          {project.client?.name ? (
-            <div className="project-meta-header-item project-meta-header-client">
-              <h3 className="project-meta-header-item-heading">Client</h3>
-              <p>{project.client.name}</p>
-              {project.client.location && (
-                <p>{project.client.location}</p>
-              )}
+      <Layout>
+        
+        <Container pageName="project">
+          <Header />
+          <header className="project-meta-header">
+            <div className="project-meta-header-item project-meta-header-date">
+              <h3 className="project-meta-header-item-heading">Date</h3>
+              <Date dateString={project.date} />
             </div>
-          ) : (
-            <div className="project-meta-header-item project-meta-header-client">
+            <div className="project-meta-header-item project-meta-header-title">
+              <h3 className="project-meta-header-item-heading">Project</h3>
+              <h2 className="project-title">{project.title}</h2>
             </div>
+            {project.client?.name ? (
+              <div className="project-meta-header-item project-meta-header-client">
+                <h3 className="project-meta-header-item-heading">Client</h3>
+                <p>{project.client.name}</p>
+                {project.client.location && (
+                  <p>{project.client.location}</p>
+                )}
+              </div>
+            ) : (
+              <div className="project-meta-header-item project-meta-header-client">
+              </div>
+            )}
+            {project.categories && (
+              <div className="project-meta-header-item project-meta-header-categories">
+                <h3 className="project-meta-header-item-heading">Type</h3>
+                <ul>
+                  {project.categories.map(category => <li key={category.name}>{category.name}</li>)}
+                </ul>
+              </div>
+            )}
+            {project.collaborators && (
+              <div className="project-meta-header-item project-meta-header-collaborators">
+                <h3 className="project-meta-header-item-heading">Collaborator</h3>
+                <ul>
+                  {project.collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
+                </ul>
+              </div>
+            )}
+          </header>
+          {project.innerCoverImage && (
+            <CoverImage image={project.innerCoverImage} />
           )}
-          {project.categories && (
-            <div className="project-meta-header-item project-meta-header-categories">
-              <h3 className="project-meta-header-item-heading">Type</h3>
-              <ul>
-                {project.categories.map(category => <li key={category.name}>{category.name}</li>)}
+          <div className="project-content">
+            <article className="project-text text">
+              <h3 className="project-text-heading">Case study</h3>
+              <PostBody content={project.content} />
+            </article>
+            <aside className="project-meta-secondary">
+              <div className="project-meta-secondary-item">
+                <h3>Credits</h3>
+              </div>
+            </aside>
+            {project.media && (
+              <ul className="project-meta-header-item project-meta-header-media">
+                {project.media.map(mediaItem =>
+                  <img key={mediaItem.asset._ref} src={urlForImage(mediaItem.asset._ref).width(2000).url()} />
+                )}
               </ul>
-            </div>
-          )}
-          {project.collaborators && (
-            <div className="project-meta-header-item project-meta-header-collaborators">
-              <h3 className="project-meta-header-item-heading">Collaborator</h3>
-              <ul>
-                {project.collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
-              </ul>
-            </div>
-          )}
-        </header>
-        {project.innerCoverImage && (
-          <CoverImage image={project.innerCoverImage} />
-        )}
-        <div className="project-content">
-          <article className="project-text text">
-            <h3 className="project-text-heading">Case study</h3>
-            <PostBody content={project.content} />
-          </article>
-          <aside className="project-meta-secondary">
-            <div className="project-meta-secondary-item">
-              <h3>Credits</h3>
-            </div>
-          </aside>
-          {project.media && (
-            <ul className="project-meta-header-item project-meta-header-media">
-              {project.media.map(mediaItem =>
-                <img key={mediaItem.asset._ref} src={urlForImage(mediaItem.asset._ref).width(2000).url()} />
-              )}
-            </ul>
-          )}
-        </div>
-      </Container>
-    </Layout>
+            )}
+          </div>
+        </Container>
+      </Layout>
+    </>
   )
 }
 
