@@ -64,6 +64,12 @@
           content: '↗ ';
         }
       }
+      
+      @media (hover: none) {
+        &::before {
+          content: '↗ ';
+        }
+      }
     }
     
     ul {

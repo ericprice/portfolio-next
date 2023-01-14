@@ -85,7 +85,9 @@ a {
   ) 6 6, auto;
   
   &:hover {
-    color: $accent;
+    @media (hover: hover) {
+      color: $accent;
+    }
   }
   
   #project & {
@@ -102,7 +104,9 @@ button {
   cursor: pointer;
   
   &:hover {
-    color: $accent;
+    @media (hover: hover) {
+      color: $accent;
+    }
   }
 }
 
@@ -167,7 +171,9 @@ textarea {
       color: $main-bg;
       
       &:hover {
-        color: $accent;
+        @media (hover: hover) {
+          color: $accent;
+        }
       }
     }
   }
@@ -185,7 +191,9 @@ textarea {
       color: $main-color;
       
       &:hover {
-        color: $main-bg;
+        @media (hover: hover) {
+          color: $main-bg;
+        }
       }
     }
   }
@@ -374,7 +382,9 @@ textarea {
         }
         
         &:hover::before {
-          content: '● ';
+          @media (hover: hover) {
+            content: '● ';
+          }
         }
       }
     }
@@ -392,11 +402,16 @@ textarea {
   grid-column: span 10;
   padding: calc(var(--leading) / 3) 0;
   line-height: 0;
+  filter: grayscale(1) contrast(1.2);
+  opacity: .87;
+  mix-blend-mode: darken;
   
   @media (hover: hover) {
-    filter: grayscale(1) contrast(1.2);
-    opacity: .87;
-    mix-blend-mode: darken;
+    .project-preview-content:hover & {
+      filter: none;
+      opacity: 1;
+      mix-blend-mode: normal;
+    }
   }
   
   @include breakpoint($s) {
@@ -406,12 +421,6 @@ textarea {
   @include breakpoint($m-up) {
     grid-column-start: 5;
     grid-column-end: 11;
-  }
-  
-  .project-preview-content:hover & {
-    filter: none;
-    opacity: 1;
-    mix-blend-mode: normal;
   }
 }
 
@@ -462,13 +471,15 @@ textarea {
     
     &.project-preview-external-link {
       &:hover {
-        color: #0ff;
-        
-        cursor: url('/images/cursor-teal.svg') 6 6, auto;
-        cursor: -webkit-image-set(
-          url('/images/cursor-teal.svg') 1x,
-          url('/images/cursor-teal@2x.svg') 2x
-        ) 6 6, auto;
+        @media (hover: hover) {
+          color: #0ff;
+          
+          cursor: url('/images/cursor-teal.svg') 6 6, auto;
+          cursor: -webkit-image-set(
+            url('/images/cursor-teal.svg') 1x,
+            url('/images/cursor-teal@2x.svg') 2x
+          ) 6 6, auto;
+        }
       }
       
       &::before {
