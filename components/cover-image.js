@@ -5,7 +5,7 @@ export default function CoverImage({ image: source, priority }) {
   const image = source?.asset?._ref ? (
     <div
       className="project-preview-thumbnail"
-      style={{ backgroundImage: `url(${urlForImage(source).width(2000).quality(75).url()})` }}
+      style={{ backgroundImage: `url(${urlForImage(source).width(2000).quality(85).url()})` }}
     >
     </div>
   ) : (

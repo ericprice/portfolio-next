@@ -389,12 +389,19 @@ textarea {
 }
 
 .project-meta-header-media {
-  grid-column: span 12;
+  grid-column: span 10;
   padding: calc(var(--leading) / 3) 0;
   line-height: 0;
-  filter: grayscale(1) contrast(1.2);
-  opacity: .87;
-  mix-blend-mode: darken;
+  
+  @media (hover: hover) {
+    filter: grayscale(1) contrast(1.2);
+    opacity: .87;
+    mix-blend-mode: darken;
+  }
+  
+  @include breakpoint($s) {
+    order: 5;
+  }
   
   @include breakpoint($m-up) {
     grid-column-start: 5;
@@ -482,8 +489,13 @@ textarea {
         }
         
         .project-preview-thumbnail {
-          transition: opacity .4s ease-in .7s;
-          opacity: .75;
+          transition: opacity .3s ease-in .5s;
+          opacity: 1;
+          
+          .scrolling & {
+            transition: opacity .25s ease-in-out 0s;
+            opacity: 0;
+          }
         }
       }
     }

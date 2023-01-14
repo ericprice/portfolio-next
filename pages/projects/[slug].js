@@ -5,9 +5,7 @@ import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
-import PostTitle from '../../components/post-title'
 import Date from '../../components/date'
 import CoverImage from '../../components/cover-image'
 import Link from 'next/link'
@@ -80,7 +78,7 @@ export default function Project({ project, moreProjects }) {
             </div>
           )}
         </header>
-        <CoverImage slug={project.slug} title={project.title} image={project.innerCoverImage} />
+        <CoverImage image={project.innerCoverImage} />
         <div className="project-content">
           <article className="project-text text">
             <h3 className="project-text-heading">Case study</h3>
@@ -94,7 +92,7 @@ export default function Project({ project, moreProjects }) {
           {project.media && (
             <ul className="project-meta-header-item project-meta-header-media">
               {project.media.map(mediaItem =>
-                urlForImage(mediaItem.asset._ref).width(2000).url()
+                <img src={urlForImage(mediaItem.asset._ref).width(2000).url()} />
               )}
             </ul>
           )}

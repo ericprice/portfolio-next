@@ -9,6 +9,18 @@ import { client } from '../lib/sanity.server'
 
 export default function Index({ allProjects }) {
   useEffect( () => { document.querySelector('body').classList.remove('project') } );
+  var scrollTimeout
+  useEffect( () => {
+    document.addEventListener('scroll', ()=> {
+      if (!document.querySelector('body').classList.contains('scrolling')) {
+        document.querySelector('body').classList.add('scrolling')
+      }
+      clearTimeout(scrollTimeout)
+      scrollTimeout = setTimeout(function() {
+        document.querySelector('body').classList.remove('scrolling')
+      }, 1000)
+    });
+   }, []);
   return (
     <Layout>
       <Head>
@@ -16,8 +28,8 @@ export default function Index({ allProjects }) {
       </Head>
       <Container pageName="home">
         <Header />
-        <div className="featured">
-        </div>
+        {/* <div className="featured">
+        </div> */}
         {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
       </Container>
     </Layout>

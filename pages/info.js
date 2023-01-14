@@ -21,6 +21,8 @@ export default function Info() {
                 <li><a href="https://www.are.na/eric-price">Are.na</a></li>
                 <li><a href="https://github.com/ericprice">GitHub</a></li>
                 <li><a href="https://instagram.com/ericprice">Instagram</a></li>
+                <li><a href="https://typo.social/@ericprice" rel="me">Mastodon</a></li>
+                <li><a href="https://twitter.com/ericprice">Twitter</a></li>
               </ul>
             </div>
           </section>

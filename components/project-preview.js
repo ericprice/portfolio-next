@@ -59,9 +59,9 @@ export default function ProjectPreview({
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
-              <FeaturedImage slug={slug} title={title} image={featuredImage} />
+              <FeaturedImage image={featuredImage} />
             </div>
-            <CoverImage slug={slug} title={title} image={coverImage} />
+            <CoverImage image={coverImage} />
           </a>
         </div>
       ) : (
@@ -89,9 +89,9 @@ export default function ProjectPreview({
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
-              <FeaturedImage slug={slug} title={title} image={featuredImage} />
+              <FeaturedImage image={featuredImage} />
             </div>
-            <CoverImage slug={slug} title={title} image={coverImage} />
+            <CoverImage image={coverImage} />
           </Link>
         </div>
       )}
