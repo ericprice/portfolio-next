@@ -24,7 +24,7 @@ export default function Project({ project, moreProjects }) {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{project.title + ' – Eric Price'}</title>
         {project.coverImage?.asset?._ref && (
           <meta
@@ -37,7 +37,7 @@ export default function Project({ project, moreProjects }) {
               .url()}
           />
         )}
-      </Head>
+      </Head> */}
       <Layout>
         
         <Container pageName="project">
