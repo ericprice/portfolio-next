@@ -174,7 +174,7 @@ export default {
     select: {
       title: 'title',
       client: 'client.name',
-      media: 'coverImage',
+      media: 'featuredImage',
     },
     prepare(selection) {
       const { client } = selection

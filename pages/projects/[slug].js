@@ -80,7 +80,7 @@ export default function Project({ project, moreProjects }) {
             </div>
           )}
         </header>
-        <CoverImage slug={project.slug} title={project.title} image={project.coverImage} />
+        <CoverImage slug={project.slug} title={project.title} image={project.innerCoverImage} />
         <div className="project-content">
           <article className="project-text text">
             <h3 className="project-text-heading">Case study</h3>
