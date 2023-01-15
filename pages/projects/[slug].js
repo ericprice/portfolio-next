@@ -26,6 +26,8 @@ export default function Project({ project, moreProjects }) {
     <Layout>
       
       
+      
+      
     </Layout>
   )
 }
