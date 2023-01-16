@@ -68,7 +68,9 @@
       }
       
       a:hover::after {
-        background-image: url('/images/close-white.svg');
+        @media (hover: hover) {
+          background-image: url('/images/close-white.svg');
+        }
       }
     }
     
@@ -78,7 +80,9 @@
       }
       
       a:hover::after {
-        background-image: url('/images/close-gray.svg');
+        @media (hover: hover) {
+          background-image: url('/images/close-gray.svg');
+        }
       }
     }
   }

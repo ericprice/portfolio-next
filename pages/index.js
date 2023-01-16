@@ -18,7 +18,7 @@ export default function Index({ allProjects }) {
       clearTimeout(scrollTimeout)
       scrollTimeout = setTimeout(function() {
         document.querySelector('body').classList.remove('scrolling')
-      }, 1000)
+      }, 600)
     });
    }, []);
   return (

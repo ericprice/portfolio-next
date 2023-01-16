@@ -408,9 +408,9 @@ textarea {
   
   @media (hover: hover) {
     .project-preview-content:hover & {
-      filter: none;
+      filter: brightness(.56) invert(1) grayscale(1) contrast(1.2);
       opacity: 1;
-      mix-blend-mode: normal;
+      mix-blend-mode: lighten;
     }
   }
   
