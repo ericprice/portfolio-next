@@ -67,7 +67,8 @@ export default {
     {
       name: 'credits',
       title: 'Credits',
-      type: 'text',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
     {
       name: 'featuredImage',
