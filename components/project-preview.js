@@ -51,7 +51,6 @@ export default function ProjectPreview({
   }
   if (snippet) {
     var lightboxItems = []
-    var videoItems = []
     media.map(mediaItem => {
       if (mediaItem._type == 'image') {
         lightboxItems.push({'src': urlForImage(mediaItem.asset._ref).width(2000).url()});

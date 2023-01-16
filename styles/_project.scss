@@ -41,6 +41,17 @@
     
     @include breakpoint($m-up) {
       grid-column: span 6;
+      display: grid;
+      gap: 0 var(--gap);
+      grid-template-columns: repeat(6, 1fr);
+      
+      .project-text-heading {
+        grid-column: span 2;
+      }
+      
+      .project-text-content {
+        grid-column: span 4;
+      }
     }
   }
   

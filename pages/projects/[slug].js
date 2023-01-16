@@ -9,9 +9,11 @@ import Layout from '../../components/layout'
 import Date from '../../components/date'
 import CoverImage from '../../components/cover-image'
 import Link from 'next/link'
+import { getFile } from '@sanity/asset-utils'
 import { projectQuery, projectSlugsQuery } from '../../lib/queries'
 import { urlForImage } from '../../lib/sanity'
 import { client } from '../../lib/sanity.server'
+import { sanityConfig } from '../../lib/config'
 
 export default function Project({ project, moreProjects }) {
   const router = useRouter()
@@ -86,32 +88,50 @@ export default function Project({ project, moreProjects }) {
         <div className="project-content">
           <article className="project-text text">
             <h3 className="project-text-heading">Case study</h3>
-            <PostBody content={project.content} />
+            <div className="project-text-content">
+              <PostBody content={project.content} />
+            </div>
           </article>
           <aside className="project-meta-secondary">
             {project.url && project.urlLabel && (
               <div className="project-meta-secondary-item project-meta-secondary-url text">
-                <h3 className="project-text-heading">URL</h3>
+                <h3>URL</h3>
                 <a href={project.url}>{project.urlLabel}</a>
               </div>
             )}
             {project.credits && (
               <div className="project-meta-secondary-item project-meta-secondary-credits text">
-                <h3 className="project-text-heading">Credits</h3>
-                {project.credits}
+                <h3>Credits</h3>
+                <PostBody content={project.credits} />
               </div>
             )}
           </aside>
           {project.media && (
             <div className="project-media">
-              {project.media.map(mediaItem =>
-                <div className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
-                  <img src={urlForImage(mediaItem.asset._ref).width(2000).quality(85).url()} />
-                  {mediaItem.caption && (
-                    <div className="project-media-item-caption">{mediaItem.caption}</div>
-                  )}
-                </div>
-              )}
+              {project.media.map(mediaItem => {
+                if (mediaItem._type == 'image') {
+                  return (
+                    <div className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
+                      <img src={urlForImage(mediaItem.asset._ref).width(2000).quality(85).url()} />
+                      {mediaItem.caption && (
+                        <div className="project-media-item-caption">{mediaItem.caption}</div>
+                      )}
+                    </div>
+                  )
+                } else {
+                  const file = getFile(mediaItem, sanityConfig)
+                  if (file.asset.extension == 'mp4') {
+                    return (
+                      <div className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
+                        <video type="video/mp4" autoPlay muted loop src={file.asset.url} />
+                        {mediaItem.caption && (
+                          <div className="project-media-item-caption">{mediaItem.caption}</div>
+                        )}
+                      </div>
+                    )
+                  }
+                }
+              })}
             </div>
           )}
         </div>
