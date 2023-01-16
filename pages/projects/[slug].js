@@ -89,16 +89,30 @@ export default function Project({ project, moreProjects }) {
             <PostBody content={project.content} />
           </article>
           <aside className="project-meta-secondary">
-            <div className="project-meta-secondary-item">
-              <h3>Credits</h3>
-            </div>
+            {project.url && project.urlLabel && (
+              <div className="project-meta-secondary-item project-meta-secondary-url text">
+                <h3 className="project-text-heading">URL</h3>
+                <a href={project.url}>{project.urlLabel}</a>
+              </div>
+            )}
+            {project.credits && (
+              <div className="project-meta-secondary-item project-meta-secondary-credits text">
+                <h3 className="project-text-heading">Credits</h3>
+                {project.credits}
+              </div>
+            )}
           </aside>
           {project.media && (
-            <ul className="project-meta-header-item project-meta-header-media">
+            <div className="project-media">
               {project.media.map(mediaItem =>
-                <img key={mediaItem.asset._ref} src={urlForImage(mediaItem.asset._ref).width(2000).url()} />
+                <div className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
+                  <img src={urlForImage(mediaItem.asset._ref).width(2000).quality(85).url()} />
+                  {mediaItem.caption && (
+                    <div className="project-media-item-caption">{mediaItem.caption}</div>
+                  )}
+                </div>
               )}
-            </ul>
+            </div>
           )}
         </div>
       </Container>

@@ -3,8 +3,8 @@
 }
 
 .yarl__container {
-  background: url('/images/disabled.png') !important;
-  background-size: 2px 2px !important;
+  //background: url('/images/disabled.png') !important;
+  //background-size: 2px 2px !important;
 }
 
 .yarl__navigation_prev {
@@ -42,5 +42,11 @@
   
   @include breakpoint($m-up) {
     padding: 7rem var(--outer-margin-x) !important;
+  }
+}
+
+.yarl__video_container {
+  video {
+    max-height: calc(100vh - 14rem);
   }
 }

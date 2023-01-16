@@ -28,14 +28,85 @@
     margin-top: calc(50vh - 4rem);
     min-height: calc(100vh - var(--outer-margin-y) + 1px);
     background: $accent;
+    grid-auto-rows: min-content;
+  }
+  
+  .project-text,
+  .project-meta-secondary {
+    margin-bottom: var(--leading);
   }
   
   .project-text {
     grid-column: span 12;
     
     @include breakpoint($m-up) {
-      padding-right: 12.5%;
       grid-column: span 6;
+    }
+  }
+  
+  .project-meta-secondary {
+    grid-column: span 12;
+    display: grid;
+    gap: 0 var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+    
+    @include breakpoint($m-up) {
+      grid-column: span 6;
+      grid-template-columns: repeat(6, 1fr);
+    }
+    
+    a {
+      &:hover::before {
+        content: '↗ ';
+      }
+    }
+    
+    .project-meta-secondary-url {
+      grid-column: span 6;
+      
+      @include breakpoint($m-up) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+      }
+    }
+    
+    .project-meta-secondary-credits {
+      grid-column: span 6;
+      
+      @include breakpoint($m-up) {
+        grid-column-start: 5;
+        grid-column-end: 7;
+      }
+    }
+  }
+  
+  .project-media {
+    grid-column: span 12;
+    display: grid;
+    gap: 0 var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+    
+    .project-media-item {
+      line-height: 0;
+      margin-bottom: var(--outer-margin-x);
+      grid-column: span 12;
+      
+      &[data-display='halfWidth'] {
+        grid-column: span 6;
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      .project-media-item-caption {
+        line-height: var(--leading);
+        padding: calc(var(--leading) / 3) 0;
+        
+        @include breakpoint($m-up) {
+          width: 50%;
+        }
+      }
     }
   }
 }

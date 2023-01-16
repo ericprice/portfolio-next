@@ -6,8 +6,11 @@ import FeaturedImage from './featured-image'
 import FeaturedFile from './featured-file'
 import Link from 'next/link'
 import { urlForImage } from '../lib/sanity'
+import { getFile } from '@sanity/asset-utils'
 import Lightbox from 'yet-another-react-lightbox';
+import Video from 'yet-another-react-lightbox/plugins/video';
 import 'yet-another-react-lightbox/styles.css';
+import { sanityConfig } from '../lib/config'
 
 export default function ProjectPreview({
   title,
@@ -48,9 +51,27 @@ export default function ProjectPreview({
   }
   if (snippet) {
     var lightboxItems = []
-    media.map(mediaItem =>
-      lightboxItems.push({'src' : urlForImage(mediaItem.asset._ref).width(2000).url()})
-    )
+    var videoItems = []
+    media.map(mediaItem => {
+      if (mediaItem._type == 'image') {
+        lightboxItems.push({'src': urlForImage(mediaItem.asset._ref).width(2000).url()});
+      } else {
+        const file = getFile(mediaItem, sanityConfig)
+        if (file.asset.extension == 'mp4') {
+          var video = new Array();
+          video.push({
+            'src': file.asset.url,
+            'type': 'video/mp4'
+          })
+          lightboxItems.push(
+            {
+              'type': 'video',
+              'sources': video
+            }
+          )
+        }
+      }
+    })
   }
   return (
     <>
@@ -158,8 +179,13 @@ export default function ProjectPreview({
             controller={{
               closeOnBackdropClick: true
             }}
-            on={{
-              click: console.log('click')
+            plugins={[Video]}
+            video={{
+              controls: false,
+              playsInline: true,
+              autoPlay: true,
+              muted: true,
+              loop: true
             }}
           />
         </div>
