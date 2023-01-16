@@ -8,6 +8,7 @@ import Header from '../../components/header'
 import Layout from '../../components/layout'
 import Date from '../../components/date'
 import CoverImage from '../../components/cover-image'
+import CoverFile from '../../components/cover-file'
 import Link from 'next/link'
 import { getFile } from '@sanity/asset-utils'
 import { projectQuery, projectSlugsQuery } from '../../lib/queries'
@@ -84,6 +85,9 @@ export default function Project({ project, moreProjects }) {
         </header>
         {project.innerCoverImage && (
           <CoverImage image={project.innerCoverImage} />
+        )}
+        {project.innerCoverFile && (
+          <CoverFile file={project.innerCoverFile} />
         )}
         <div className="project-content">
           <article className="project-text text">

@@ -100,8 +100,14 @@ export default function ProjectPreview({
                 </ul>
               )}
               <FeaturedImage image={featuredImage} />
+              {featuredFile && (
+                <FeaturedFile file={featuredFile} />
+              )}
             </div>
             <CoverImage image={coverImage} />
+            {coverFile && (
+              <CoverFile file={coverFile} />
+            )}
           </a>
         </div>
       ) : caseStudy ? (
@@ -130,8 +136,14 @@ export default function ProjectPreview({
                 </ul>
               )}
               <FeaturedImage image={featuredImage} />
+              {featuredFile && (
+                <FeaturedFile file={featuredFile} />
+              )}
             </div>
             <CoverImage image={coverImage} />
+            {coverFile && (
+              <CoverFile file={coverFile} />
+            )}
           </Link>
         </div>
       ) : snippet ? (
@@ -160,8 +172,14 @@ export default function ProjectPreview({
                 </ul>
               )}
               <FeaturedImage image={featuredImage} />
+              {featuredFile && (
+                <FeaturedFile file={featuredFile} />
+              )}
             </div>
             <CoverImage image={coverImage} />
+            {coverFile && (
+              <CoverFile file={coverFile} />
+            )}
           </a>
           <Lightbox
             open={open}
@@ -214,8 +232,14 @@ export default function ProjectPreview({
                 </ul>
               )}
               <FeaturedImage image={featuredImage} />
+              {featuredFile && (
+                <FeaturedFile file={featuredFile} />
+              )}
             </div>
             <CoverImage image={coverImage} />
+            {coverFile && (
+              <CoverFile file={coverFile} />
+            )}
           </div>
         </div>
       )}

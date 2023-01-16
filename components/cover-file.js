@@ -1,20 +1,13 @@
 import cn from 'classnames'
-import { urlForImage } from '../lib/sanity'
+import { getFile } from '@sanity/asset-utils'
+import { sanityConfig } from '../lib/config'
 
-export default function CoverFile({ image: source, priority }) {
-  const image = source?.asset?._ref ? (
-    <div
-      className="project-preview-thumbnail"
-      style={{ backgroundImage: `url(${urlForImage(source).width(2000).quality(75).url()})` }}
-    >
-    </div>
-  ) : (
-    <></>
-  )
+export default function CoverFile({ file }) {
+  const theFile = getFile(file, sanityConfig)
 
   return (
-    <>
-      {image}
-    </>
+    <div className="project-preview-thumbnail project-preview-video">
+      <video type="video/mp4" src={theFile.asset.url} autoPlay muted loop />
+    </div>
   )
 }
