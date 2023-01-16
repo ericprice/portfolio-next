@@ -103,6 +103,14 @@ export default function Project({ project, moreProjects }) {
                 <a href={project.url}>{project.urlLabel}</a>
               </div>
             )}
+            {project.collaborators && (
+              <div className="project-meta-secondary-item project-meta-secondary-credits text">
+                <h3>Collaborator</h3>
+                <ul>
+                  {project.collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
+                </ul>
+              </div>
+            )}
             {project.credits && (
               <div className="project-meta-secondary-item project-meta-secondary-credits text">
                 <h3>Credits</h3>
