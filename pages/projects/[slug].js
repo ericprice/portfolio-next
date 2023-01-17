@@ -135,7 +135,7 @@ export default function Project({ project, moreProjects }) {
                   if (file.asset.extension == 'mp4') {
                     return (
                       <div className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
-                        <video loop autoPlay muted>
+                        <video loop={true} autoPlay={true} muted={true} playsInline={true}>
                           <source src={file.asset.url} type="video/mp4"></source>
                         </video>
                         {mediaItem.caption && (
