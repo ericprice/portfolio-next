@@ -99,6 +99,8 @@
     }
     
     .project-meta-secondary-collaborator {
+      grid-column: span 6;
+      
       @include breakpoint($m-up) {
         display: none;
       }
