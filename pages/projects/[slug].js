@@ -16,6 +16,7 @@ import { urlForImage } from '../../lib/sanity'
 import { client } from '../../lib/sanity.server'
 import { sanityConfig } from '../../lib/config'
 
+
 export default function Project({ project, moreProjects }) {
   const router = useRouter()
   const slug = project?.slug
