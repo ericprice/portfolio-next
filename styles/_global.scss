@@ -495,6 +495,10 @@ textarea {
     }
     
     &.project-preview-snippet {
+      .project-preview-content-inner {
+        border-bottom: 1px solid $main-color;
+      }
+      
       &::before {
         content: ' Snippet';
       }
@@ -550,7 +554,7 @@ textarea {
         }
         
         .project-preview-thumbnail {
-          transition: opacity .3s ease-in .2s;
+          transition: opacity .3s ease-in .667s;
           opacity: 1;
           
           .scrolling & {

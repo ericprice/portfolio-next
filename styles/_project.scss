@@ -97,6 +97,12 @@
         grid-column-end: 7;
       }
     }
+    
+    .project-meta-secondary-collaborator {
+      @include breakpoint($m-up) {
+        display: none;
+      }
+    }
   }
   
   .project-media {

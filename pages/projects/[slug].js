@@ -104,7 +104,7 @@ export default function Project({ project, moreProjects }) {
               </div>
             )}
             {project.collaborators && (
-              <div className="project-meta-secondary-item project-meta-secondary-credits text">
+              <div className="project-meta-secondary-item project-meta-secondary-collaborator text">
                 <h3>Collaborator</h3>
                 <ul>
                   {project.collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
