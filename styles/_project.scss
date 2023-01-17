@@ -115,6 +115,7 @@
       line-height: 0;
       margin-bottom: var(--outer-margin-x);
       grid-column: span 12;
+      text-align: center;
       
       &[data-display='halfWidth'] {
         grid-column: span 6;
@@ -124,9 +125,14 @@
         margin-bottom: 0;
       }
       
+      video {
+        width: 100%;
+      }
+      
       .project-media-item-caption {
         line-height: var(--leading);
         padding: calc(var(--leading) / 3) 0;
+        text-align: left;
         
         @include breakpoint($m-up) {
           width: 50%;

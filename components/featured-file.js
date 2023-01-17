@@ -7,7 +7,9 @@ export default function CoverFile({ file }) {
   
   return (
     <div className="project-meta-header-item project-meta-header-media">
-      <video type="video/mp4" src={theFile.asset.url} autoPlay muted loop />
+      <video loop autoPlay muted>
+        <source src={theFile.asset.url} type="video/mp4"></source>
+      </video>
     </div>
   )
 }
