@@ -28,8 +28,6 @@ export default function Index({ allProjects }) {
       </Head>
       <Container pageName="home">
         <Header />
-        {/* <div className="featured">
-        </div> */}
         {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
       </Container>
     </Layout>

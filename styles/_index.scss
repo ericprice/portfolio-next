@@ -1,6 +1,11 @@
+.site-header-subtitle {
+  position: sticky;
+  top: calc(var(--outer-margin-y) + var(--leading));
+}
+
 .featured {
   width: 100%;
-  height: calc(75vh - (var(--leading) * 2) - calc(var(--outer-margin-y) * 2));
+  height: calc(75vh - (var(--leading) * 1) - calc(var(--outer-margin-y) * 1));
   
   .slide {
     height: 100vh;

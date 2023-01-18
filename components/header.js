@@ -16,6 +16,8 @@ export default function Intro() {
           .info
         </Link>
       </div>
+      {/* <div className="featured">
+      </div> */}
     </header>
   )
 }

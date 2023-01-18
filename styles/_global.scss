@@ -379,6 +379,14 @@ textarea {
       }
     }
   }
+  
+  #home & li {
+    text-transform: lowercase;
+    
+    &:first-child {
+      text-transform: none;
+    }
+  }
 }
 
 .project-meta-header-collaborators {
@@ -579,6 +587,7 @@ textarea {
       background-position: center center;
       transition: opacity .25s ease-in-out 0s;
       mix-blend-mode: screen;
+      filter: grayscale(1);
       
       video {
         position: absolute;
@@ -586,7 +595,6 @@ textarea {
         left: 50%;
         transform: translate(-50%, -50%);
         max-height: calc(100vh - 14rem);
-        filter: grayscale(1);
       }
     }
   }
