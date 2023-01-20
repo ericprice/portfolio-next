@@ -5,7 +5,8 @@ $m-up: min-width 768px;
 $l-down: max-width 1599px;
 $l: 1024px 1599px;
 $l-up: min-width 1024px;
-$xl: min-width 1600px;
+$xl: min-width 1400px;
+
 
 $main-color: #222;
 $main-bg: #aaa;
@@ -35,7 +36,7 @@ html {
   }
 
   @include breakpoint($xl) {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
 
