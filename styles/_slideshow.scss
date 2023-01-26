@@ -41,12 +41,12 @@
   padding: 1.5rem !important;
   
   @include breakpoint($m-up) {
-    padding: 7rem var(--outer-margin-x) !important;
+    padding: 9rem var(--outer-margin-x) !important;
   }
 }
 
 .yarl__video_container {
   video {
-    max-height: calc(100vh - 14rem);
+    max-height: calc(100vh - 18rem);
   }
 }

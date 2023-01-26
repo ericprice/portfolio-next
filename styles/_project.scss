@@ -6,9 +6,9 @@
   
   .project-preview-thumbnail {
     position: fixed;
-    top: 7rem;
+    top: 9rem;
     right: var(--outer-margin-x);
-    bottom: 7rem;
+    bottom: 9rem;
     left: var(--outer-margin-x);
     z-index: -1;
     pointer-events: none;
@@ -22,7 +22,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      max-height: calc(100vh - 14rem);
+      max-height: calc(100vh - 18rem);
     }
   }
   
@@ -33,7 +33,8 @@
     grid-template-columns: repeat(12, 1fr);
     border-top: 1px solid $main-color;
     padding-top: calc(var(--leading) / 3);
-    margin-top: calc(50vh - 4rem);
+    //margin-top: calc(50vh - 4rem);
+    margin-top: calc(50vh - (var(--leading) * 8));
     min-height: calc(100vh - var(--outer-margin-y) + 1px);
     background: $accent;
     grid-auto-rows: min-content;
