@@ -124,7 +124,7 @@ export default function Project({ project, moreProjects }) {
                 if (mediaItem._type == 'image') {
                   return (
                     <div className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
-                      <img src={urlForImage(mediaItem.asset._ref).width(2000).quality(85).url()} />
+                      <img src={urlForImage(mediaItem.asset._ref).width(2400).quality(85).url()} />
                       {mediaItem.caption && (
                         <div className="project-media-item-caption">{mediaItem.caption}</div>
                       )}
