@@ -88,6 +88,13 @@
         grid-column-start: 3;
         grid-column-end: 5;
       }
+      
+      .project-meta-secondary-url-link {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
     
     .project-meta-secondary-credits {
