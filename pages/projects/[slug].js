@@ -100,7 +100,7 @@ export default function Project({ project, moreProjects }) {
             {project.url && project.urlLabel && (
               <div className="project-meta-secondary-item project-meta-secondary-url text">
                 <h3>URL</h3>
-                <a class="project-meta-secondary-url-link" href={project.url}>{project.urlLabel}</a>
+                <a className="project-meta-secondary-url-link" href={project.url}>{project.urlLabel}</a>
               </div>
             )}
             {project.collaborators && (
