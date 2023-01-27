@@ -141,22 +141,22 @@ textarea {
   padding: var(--outer-margin-y) var(--outer-margin-x);
   min-height: 100vh;
   
-  //&#home {
-  //  cursor: url('/images/cursor-black.svg') 6 6, auto;
-  //  cursor: -webkit-image-set(
-  //    url('/images/cursor-black.svg') 1x,
-  //    url('/images/cursor-black@2x.svg') 2x
-  //  ) 6 6, auto;
-  //}
+  &#home {
+    cursor: url('/images/cursor-black.svg') 6 6, auto;
+    cursor: -webkit-image-set(
+      url('/images/cursor-black.svg') 1x,
+      url('/images/cursor-black@2x.svg') 2x
+    ) 6 6, auto;
+  }
   
   &#info {
     background: $main-color;
     color: $main-bg;
-    //cursor: url('/images/cursor-gray.svg') 6 6, auto;
-    //cursor: -webkit-image-set(
-    //  url('/images/cursor-gray.svg') 1x,
-    //  url('/images/cursor-gray@2x.svg') 2x
-    //) 6 6, auto;
+    cursor: url('/images/cursor-gray.svg') 6 6, auto;
+    cursor: -webkit-image-set(
+      url('/images/cursor-gray.svg') 1x,
+      url('/images/cursor-gray@2x.svg') 2x
+    ) 6 6, auto;
     
     a {
       color: $main-bg;
@@ -172,11 +172,11 @@ textarea {
   &#project {
     //background: $accent;
     color: $main-color;
-    //cursor: url('/images/cursor-black.svg') 6 6, auto;
-    //cursor: -webkit-image-set(
-    //  url('/images/cursor-black.svg') 1x,
-    //  url('/images/cursor-black@2x.svg') 2x
-    //) 6 6, auto;
+    cursor: url('/images/cursor-black.svg') 6 6, auto;
+    cursor: -webkit-image-set(
+      url('/images/cursor-black.svg') 1x,
+      url('/images/cursor-black@2x.svg') 2x
+    ) 6 6, auto;
     
     a {
       color: $main-color;
@@ -407,9 +407,11 @@ textarea {
   
   @media (hover: hover) {
     .project-preview-content:hover & {
-      filter: brightness(.56) invert(1) grayscale(1) contrast(1.2);
+      //filter: brightness(.56) invert(1) grayscale(1) contrast(1.2);
+      filter: none;
       opacity: 1;
-      mix-blend-mode: lighten;
+      //mix-blend-mode: lighten;
+      mix-blend-mode: normal;
     }
   }
   
