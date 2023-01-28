@@ -321,9 +321,12 @@ textarea {
   @include breakpoint($s) {
     grid-column: span 4;
     order: 2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    
+    ul {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   
   @include breakpoint($m-up) {
