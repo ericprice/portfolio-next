@@ -195,7 +195,8 @@ textarea {
   
   #home & {
     position: sticky;
-    top: calc(var(--outer-margin-y) + var(--leading));
+    top: calc(var(--outer-margin-y) + var(--leading) - 1px);
+    padding-top: 1px;
     z-index: 50;
     background: $main-bg;
     border-bottom: 1px solid $main-color;
