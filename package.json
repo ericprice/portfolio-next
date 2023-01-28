@@ -4,7 +4,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "studio:dev": "npm --prefix studio run start",
+    "studio:dev": "npm --prefix studio run dev",
     "studio:deploy": "npx vercel env pull && npm --prefix studio run deploy"
   },
   "dependencies": {
@@ -16,7 +16,8 @@
     "next": "latest",
     "next-sanity": "^0.6.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "vercel": "^28.14.0"
   },
   "devDependencies": {
     "@sanity/asset-utils": "^1.3.0",
