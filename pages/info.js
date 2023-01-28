@@ -71,42 +71,42 @@ export default function Info() {
               <section className="info-content-section">
                 <h3 className="info-heading">2016</h3>
                 <ul>
-                  <li>Interview, <em>Gratuitous Type</em></li>
+                  <li>Interview, <em>Gratuitous&nbsp;Type</em></li>
                 </ul>
               </section>
               <section className="info-content-section">
                 <h3 className="info-heading">2013</h3>
                 <ul>
-                  <li>“20 Under 30” New Visual Artist, <em>Print</em> Magazine</li>
+                  <li>“20 Under 30” New Visual Artist, <em>Print</em>&nbsp;Magazine</li>
                   <li>Interview, <em>Grafill</em></li>
                 </ul>
               </section>
               <section className="info-content-section">
                 <h3 className="info-heading">2012</h3>
                 <ul>
-                  <li>Regional Design Annual, <em>Print</em> Magazine</li>
-                  <li>Design Show, AIGA Minnesota</li>
-                  <li>Innovative/Best in Show, Museums and the Web</li>
-                  <li>PowerPoint, Art of This Gallery</li>
+                  <li>Regional Design Annual, <em>Print</em>&nbsp;Magazine</li>
+                  <li>Design Show, AIGA&nbsp;Minnesota</li>
+                  <li>Innovative/Best in Show, Museums and the&nbsp;Web</li>
+                  <li>PowerPoint, Art of This&nbsp;Gallery</li>
                 </ul>
               </section>
               <section className="info-content-section">
                 <h3 className="info-heading">2011</h3>
                 <ul>
-                  <li>The Year in Design That Works, <em>Good</em> Magazine</li>
+                  <li>The Year in Design That Works, <em>Good</em>&nbsp;Magazine</li>
                 </ul>
               </section>
               <section className="info-content-section">
                 <h3 className="info-heading">2007</h3>
                 <ul>
-                  <li>Media Best Award, Minnesota Broadcasters Association</li>
-                  <li>B.S. Graphic Design, University of Minnesota Twin Cities</li>
+                  <li>Media Best Award, Minnesota Broadcasters&nbsp;Association</li>
+                  <li>B.S. Graphic Design, University of Minnesota Twin&nbsp;Cities</li>
                 </ul>
               </section>
               <section className="info-content-section">
                 <h3 className="info-heading">2006</h3>
                 <ul>
-                  <li>Best Campus Publication of the Year, Independent Press Association</li>
+                  <li>Best Campus Publication of the Year, Independent Press&nbsp;Association</li>
                 </ul>
               </section>
             </div>
