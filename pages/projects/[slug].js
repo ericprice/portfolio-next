@@ -29,11 +29,11 @@ export default function Project({ project, moreProjects }) {
     <Layout>
       <Head>
         <title>{project.title + ' – Eric Price'}</title>
-        {project.coverImage?.asset?._ref && (
+        {project.featuredImage?.asset?._ref && (
           <meta
             key="ogImage"
             property="og:image"
-            content={urlForImage(project.coverImage)
+            content={urlForImage(project.featuredImage)
               .width(1200)
               .height(627)
               .fit('crop')
