@@ -48,6 +48,7 @@ export default function Info() {
                 <li>New York Comedy Festival, New&nbsp;York</li>
                 <li>North Corp., Minneapolis</li>
                 <li>Office of Int./Est./Ext., St.&nbsp;Paul</li>
+                <li>Omnivore, New&nbsp;York</li>
                 <li>Other Means, New&nbsp;York</li>
                 <li>Project Projects, New&nbsp;York</li>
                 <li>Robert Rauschenberg Foundation, New&nbsp;York</li>
