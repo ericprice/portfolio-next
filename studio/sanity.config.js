@@ -1,7 +1,8 @@
 import { defineConfig } from "sanity";
 import { deskTool } from 'sanity/desk'
 import { media } from 'sanity-plugin-media'
-import { contentGraphView } from "sanity-plugin-graph-view";
+import { contentGraphView } from 'sanity-plugin-graph-view';
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 import schemas from './schemas/schema'
 
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
     deskTool(),
     media(),
     contentGraphView({}),
+    vercelDeployTool(),
   ],
   schema: {
     types: schemas,

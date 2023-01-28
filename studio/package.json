@@ -4,7 +4,6 @@
     "start": "sanity start",
     "build": "sanity build",
     "dev": "sanity dev",
-    
     "deploy": "npx @sanity/cli deploy",
     "cors:add": "npx @sanity/cli cors add",
     "prestart": "npm run env",
@@ -20,6 +19,7 @@
     "sanity": "^3.2.5",
     "sanity-plugin-graph-view": "^2.0.1",
     "sanity-plugin-media": "^2.0.4",
+    "sanity-plugin-vercel-deploy": "^3.3.3",
     "styled-components": "^5.2.0"
   }
 }
