@@ -1,5 +1,5 @@
 import '../styles/index.scss'
-
+import { Analytics } from '@vercel/analytics/react';
 import React, { useRef, useEffect, memo } from 'react'
 import { useRouter } from 'next/router'
 
@@ -57,6 +57,7 @@ const MyApp = ({ Component, pageProps }) => {
         ))}
       </div>
       {!isRetainableRoute && <Component {...pageProps} />}
+      <Analytics />
     </div>
   )
 }
