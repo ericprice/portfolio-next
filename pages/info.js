@@ -69,6 +69,12 @@ export default function Info() {
           <section className="info-section info-section-press">
             <div className="info-content">
               <section className="info-content-section">
+                <h3 className="info-heading">2018</h3>
+                <ul>
+                  <li>Tam O’Shanter Drawing Sessions: Ways of Graphic Design-ing, Carnegie Museum of&nbsp;Art</li>
+                </ul>
+              </section>
+              <section className="info-content-section">
                 <h3 className="info-heading">2016</h3>
                 <ul>
                   <li>Interview, <em>Gratuitous&nbsp;Type</em></li>
