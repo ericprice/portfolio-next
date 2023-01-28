@@ -33,11 +33,11 @@ export default function Info() {
                 <li>Ballroom Marfa, Marfa</li>
                 <li>Barry Lopez Foundation for Art and Environment, Santa&nbsp;Fe</li>
                 <li>Black Reconstruction Collective, New&nbsp;York</li>
-                <li>Brooklyn Museum, Brooklyn</li>
+                <li>Brooklyn Museum, New&nbsp;York</li>
                 <li>Carolines on Broadway, New&nbsp;York</li>
                 <li>Club Night Club, New&nbsp;York</li>
                 <li>Danspace Project, New&nbsp;York</li>
-                <li>Doubleday &amp; Cartwright, New&nbsp;York</li>
+                <li>Doubleday &amp; Cartwright, Los Angeles/New&nbsp;York</li>
                 <li>DoubleYou, New York</li>
                 <li>Johannes Girardoni Studio, Los&nbsp;Angeles</li>
                 <li>Goldstein Museum of Design, St.&nbsp;Paul</li>
@@ -55,7 +55,7 @@ export default function Info() {
                 <li>School of Visual Arts, New&nbsp;York</li>
                 <li>Studio Lin, New&nbsp;York</li>
                 <li>Toledo Museum of Art, Toledo</li>
-                <li>University of Minnesota, Minneapolis</li>
+                <li>University of Minnesota, Minneapolis/St.&nbsp;Paul</li>
                 <li>Walk Together PJR, New&nbsp;York</li>
                 <li>Walker Art Center, Minneapolis</li>
                 <li>Weisman Art Museum, Minneapolis</li>
