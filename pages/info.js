@@ -89,6 +89,7 @@ export default function Info() {
                   <li>Best in Show, Museums and the&nbsp;Web</li>
                   <li>Innovative, Museums and the&nbsp;Web</li>
                   <li>PowerPoint, Art of This&nbsp;Gallery</li>
+                  <li>Finalist, Webby&nbsp;Awards</li>
                 </ul>
               </section>
               <section className="info-content-section">
