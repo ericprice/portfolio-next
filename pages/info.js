@@ -30,39 +30,40 @@ export default function Info() {
             <h3 className="info-heading">Clients &amp; collaborators</h3>
             <div className="info-content">
               <ul>
-                <li>Askov Finlayson</li>
-                <li>Ballroom Marfa</li>
-                <li>Barry Lopez Foundation for Art and Environment</li>
-                <li>Black Reconstruction Collective</li>
-                <li>Brooklyn Museum</li>
-                <li>Club Night Club</li>
-                <li>Danspace Project</li>
-                <li>Doubleday & Cartwright</li>
-                <li>DoubleYou</li>
-                <li>Johannes Girardoni Studio</li>
-                <li>Goldstein Museum of Design</li>
-                <li>Intersection</li>
-                <li>Minneapolis College of Art and Design</li>
-                <li>Minnesota Broadcasters Association</li>
-                <li>Minnesota Museum of American Art</li>
-                <li>New York Comedy Festival</li>
-                <li>North Corp.</li>
-                <li>Office of Int./Est./Ext.</li>
-                <li>Other Means</li>
-                <li>Project Projects</li>
-                <li>Robert Rauschenberg Foundation</li>
-                <li>RO/LU</li>
-                <li>School of Visual Arts</li>
-                <li>Studio Lin</li>
-                <li>Toledo Museum of Art</li>
-                <li>University of Minnesota</li>
-                <li>Walk Together PJR</li>
-                <li>Walker Art Center</li>
-                <li>Weisman Art Museum</li>
-                <li>Theo Wenner Studio</li>
-                <li>WeShouldDoItAll</li>
-                <li>Wkshps</li>
-                <li>WORKac</li>
+                <li>Askov Finlayson, Minneapolis</li>
+                <li>Ballroom Marfa, Marfa</li>
+                <li>Barry Lopez Foundation for Art and Environment, Santa&nbsp;Fe</li>
+                <li>Black Reconstruction Collective, New&nbsp;York</li>
+                <li>Brooklyn Museum, Brooklyn</li>
+                <li>Carolines on Broadway, New&nbsp;York</li>
+                <li>Club Night Club, New&nbsp;York</li>
+                <li>Danspace Project, New&nbsp;York</li>
+                <li>Doubleday &amp; Cartwright, New&nbsp;York</li>
+                <li>DoubleYou, New York</li>
+                <li>Johannes Girardoni Studio, Los&nbsp;Angeles</li>
+                <li>Goldstein Museum of Design, St.&nbsp;Paul</li>
+                <li>Intersection, New York</li>
+                <li>Minneapolis College of Art and Design, Minneapolis</li>
+                <li>Minnesota Broadcasters Association, Minneapolis</li>
+                <li>Minnesota Museum of American Art, St.&nbsp;Paul</li>
+                <li>New York Comedy Festival, New&nbsp;York</li>
+                <li>North Corp., Minneapolis</li>
+                <li>Office of Int./Est./Ext., St.&nbsp;Paul</li>
+                <li>Other Means, New&nbsp;York</li>
+                <li>Project Projects, New&nbsp;York</li>
+                <li>Robert Rauschenberg Foundation, New&nbsp;York</li>
+                <li>RO/LU, St.&nbsp;Paul</li>
+                <li>School of Visual Arts, New&nbsp;York</li>
+                <li>Studio Lin, New&nbsp;York</li>
+                <li>Toledo Museum of Art, Toledo</li>
+                <li>University of Minnesota, Minneapolis</li>
+                <li>Walk Together PJR, New&nbsp;York</li>
+                <li>Walker Art Center, Minneapolis</li>
+                <li>Weisman Art Museum, Minneapolis</li>
+                <li>Theo Wenner Studio, New&nbsp;York</li>
+                <li>WeShouldDoItAll, New&nbsp;York</li>
+                <li>Wkshps, New&nbsp;York</li>
+                <li>WORKac, New&nbsp;York</li>
               </ul>
             </div>
           </section>

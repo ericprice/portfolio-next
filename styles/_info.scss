@@ -97,6 +97,10 @@
     .info-content {
       column-count: 2;
       column-gap: var(--gap);
+      
+      li {
+        break-inside: avoid;
+      }
     }
   }
   
