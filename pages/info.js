@@ -86,7 +86,8 @@ export default function Info() {
                 <ul>
                   <li>Regional Design Annual, <em>Print</em>&nbsp;Magazine</li>
                   <li>Design Show, AIGA&nbsp;Minnesota</li>
-                  <li>Innovative/Best in Show, Museums and the&nbsp;Web</li>
+                  <li>Best in Show, Museums and the&nbsp;Web</li>
+                  <li>Innovative, Museums and the&nbsp;Web</li>
                   <li>PowerPoint, Art of This&nbsp;Gallery</li>
                 </ul>
               </section>
