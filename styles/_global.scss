@@ -389,7 +389,7 @@ textarea {
     }
   }
   
-  #home & li {
+  li {
     text-transform: lowercase;
     
     &:first-child {
@@ -599,6 +599,10 @@ textarea {
       transition: opacity .25s ease-in-out 0s;
       mix-blend-mode: screen;
       filter: grayscale(1);
+      
+      .yarl__no_scroll & {
+        display: none;
+      }
       
       video {
         position: absolute;

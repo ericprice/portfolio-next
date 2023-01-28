@@ -38,10 +38,15 @@
 }
 
 .yarl__slide {
-  padding: 1.5rem !important;
+  padding: var(--outer-margin-x) !important;
   
   @include breakpoint($m-up) {
     padding: 9rem var(--outer-margin-x) !important;
+  }
+  
+  .yarl__slide_image {
+    max-width: auto !important;
+    max-height: auto !important;
   }
 }
 
