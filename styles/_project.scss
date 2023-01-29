@@ -4,7 +4,7 @@
     grid-auto-rows: min-content;
   }
   
-  .project-preview-thumbnail {
+  .project-preview-thumbnail-container {
     position: fixed;
     top: 9rem;
     right: var(--outer-margin-x);
@@ -12,6 +12,14 @@
     left: var(--outer-margin-x);
     z-index: -1;
     pointer-events: none;
+  }
+  
+  .project-preview-thumbnail {
+    position: relative;
+    width: 100%;
+    max-width: var(--max-width);
+    height: 100%;
+    margin: 0 auto;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;

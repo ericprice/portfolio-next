@@ -24,6 +24,7 @@ export default function ProjectsList({ projects }) {
         
         return (
           <ProjectPreview
+            key={project.slug}
             title={project.title}
             featuredImage={project.featuredImage}
             featuredFile={project.featuredFile}

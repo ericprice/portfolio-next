@@ -18,6 +18,7 @@ $accent: #fff;
   --leading: 1.2em;
   --gap: .75rem;
   --letter-spacing: .02em;
+  --max-width: 1728px;
 }
 
 *,
@@ -190,8 +191,8 @@ textarea {
 }
 
 .site-inner-container {
-  //max-width: 1600px;
-  //margin: 0 auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .project-meta-header {
@@ -576,7 +577,7 @@ textarea {
           }
         }
         
-        .project-preview-thumbnail {
+        .project-preview-thumbnail-container {
           transition: opacity .3s ease-in .667s;
           opacity: 1;
           
@@ -588,7 +589,7 @@ textarea {
       }
     }
     
-    .project-preview-thumbnail {
+    .project-preview-thumbnail-container {
       position: fixed;
       top: 9rem;
       right: var(--outer-margin-x);
@@ -597,16 +598,24 @@ textarea {
       z-index: 100;
       pointer-events: none;
       opacity: 0;
+      
+      .yarl__no_scroll & {
+        display: none;
+      }
+    }
+    
+    .project-preview-thumbnail {
+      position: relative;
+      width: 100%;
+      max-width: var(--max-width);
+      height: 100%;
+      margin: 0 auto;
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
       transition: opacity .25s ease-in-out 0s;
       mix-blend-mode: screen;
       filter: grayscale(1);
-      
-      .yarl__no_scroll & {
-        display: none;
-      }
       
       video {
         position: absolute;

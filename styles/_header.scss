@@ -5,15 +5,37 @@
     margin-bottom: 0;
   }
   
-  .site-header-title,
-  .site-header-info {
-    text-transform: uppercase;
+  .site-header-nav-container {
     position: fixed;
     top: 0;
-    padding: var(--outer-margin-y) var(--outer-margin-x) 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
     z-index: 100;
+    padding: 0 var(--outer-margin-x);
+    
+    #info &,
+    #project & {
+      position: relative;
+      width: auto;
+      padding: 0;
+    }
+  }
+  
+  .site-header-nav {
+    position: relative;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  
+  .site-header-title,
+  .site-header-info {
+    position: absolute;
+    top: 0;
+    text-transform: uppercase;
     background: $main-bg;
-    width: 50vw;
+    width: 50%;
+    padding-top: var(--outer-margin-y);
     
     &::after {
       content: '';
@@ -29,6 +51,7 @@
     #info &,
     #project & {
       background: transparent;
+      padding-top: 0;
       
       &::after {
         display: none;
@@ -50,18 +73,18 @@
     #info &,
     #project & {
       position: relative;
-      padding: 0;
+      width: 100%;
       
       a::after {
         content: 'Close';
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
         padding: var(--outer-margin-y) var(--outer-margin-x) 0;
         z-index: 100;
         width: 2.5rem;
         height: 2.5rem;
-        background: url('/images/close-gray.svg') center center no-repeat;
+        background: url('/images/close-gray.svg') right 5% no-repeat;
         background-size: .825rem auto;
         text-align: right;
         @include hide-text;
