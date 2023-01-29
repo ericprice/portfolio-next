@@ -53,7 +53,7 @@ export default function ProjectPreview({
     var lightboxItems = []
     media.map(mediaItem => {
       if (mediaItem._type == 'image') {
-        lightboxItems.push({'src': urlForImage(mediaItem.asset._ref).width(2000).url()});
+        lightboxItems.push({'src': urlForImage(mediaItem.asset._ref).width(2000).quality(85).url()});
       } else {
         const file = getFile(mediaItem, sanityConfig)
         if (file.asset.extension == 'mp4') {

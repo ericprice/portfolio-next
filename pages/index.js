@@ -27,8 +27,10 @@ export default function Index({ allProjects }) {
         <title>Eric Price</title>
       </Head>
       <Container pageName="home">
-        <Header />
-        {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
+        <div className="site-inner-container">
+          <Header />
+          {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
+        </div>
       </Container>
     </Layout>
   )

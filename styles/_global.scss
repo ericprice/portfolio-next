@@ -7,7 +7,6 @@ $l: 1024px 1399px;
 $l-up: min-width 1024px;
 $xl: min-width 1400px;
 
-
 $main-color: #222;
 $main-bg: #aaa;
 $accent: #fff;
@@ -188,6 +187,11 @@ textarea {
       }
     }
   }
+}
+
+.site-inner-container {
+  //max-width: 1600px;
+  //margin: 0 auto;
 }
 
 .project-meta-header {
