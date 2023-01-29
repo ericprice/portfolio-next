@@ -43,11 +43,6 @@
   @include breakpoint($m-up) {
     padding: 9rem var(--outer-margin-x) !important;
   }
-  
-  .yarl__slide_image {
-    max-width: auto !important;
-    max-height: auto !important;
-  }
 }
 
 .yarl__video_container {
