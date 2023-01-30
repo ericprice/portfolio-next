@@ -60,14 +60,14 @@
     
     a {
       &:hover {
-        &::before {
-          content: '↗ ';
+        &::after {
+          content: ' ↗';
         }
       }
       
       @media (hover: none) {
-        &::before {
-          content: '↗ ';
+        &::after {
+          content: ' ↗';
         }
       }
     }

@@ -81,8 +81,8 @@
     }
     
     a {
-      &:hover::before {
-        content: '↗ ';
+      &:hover::after {
+        content: ' ↗';
       }
     }
     
