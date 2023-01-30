@@ -11,7 +11,7 @@ export default function Document() {
         <Main />
         <NextScript />
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-PLJECFNMR0"
+          src="https://www.googletagmanager.com/gtag/js?id=G-QEGJ326S5J"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -19,7 +19,7 @@ export default function Document() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-PLJECFNMR0');
+            gtag('config', 'G-QEGJ326S5J');
           `}
         </Script>
       </body>
