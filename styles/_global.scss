@@ -269,7 +269,7 @@ textarea {
     
     .projects-list-header &::after,
     #project & .project-meta-header-item-heading::after {
-      content: '/client';
+      content: ' / client';
     }
   }
   
@@ -412,7 +412,7 @@ textarea {
     letter-spacing: .02em;
     
     &::before {
-      content: 'w/';
+      content: 'w/ ';
     }
     
     #project &,
