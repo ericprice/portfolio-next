@@ -4,26 +4,23 @@
     grid-auto-rows: min-content;
   }
   
-  .project-preview-thumbnail-container {
+  .project-preview-thumbnail {
     position: fixed;
     top: 9rem;
-    right: var(--outer-margin-x);
     bottom: 9rem;
-    left: var(--outer-margin-x);
+    left: 50%;
+    width: calc(100% - (var(--outer-margin-x) * 2));
+    max-width: var(--max-width);
+    transform: translateX(-50%);
     z-index: -1;
     pointer-events: none;
-  }
-  
-  .project-preview-thumbnail {
-    position: relative;
-    width: 100%;
-    max-width: var(--max-width);
-    height: 100%;
-    margin: 0 auto;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-    transition: opacity .25s ease-in-out 0s;
+    
+    .yarl__no_scroll & {
+      display: none;
+    }
     
     video {
       position: absolute;
