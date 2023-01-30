@@ -40,7 +40,7 @@
     padding-top: calc(var(--leading) / 3);
     //margin-top: calc(50vh - 4rem);
     margin-top: calc(50vh - (var(--leading) * 8));
-    min-height: calc(100vh - var(--outer-margin-y) + 1px);
+    //min-height: calc(100vh - var(--outer-margin-y) + 1px);
     background: $accent;
     grid-auto-rows: min-content;
   }
