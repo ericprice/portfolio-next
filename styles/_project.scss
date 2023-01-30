@@ -105,6 +105,12 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        
+        @media (hover: none) {
+          &::after {
+            content: ' ↗';
+          }
+        }
       }
     }
     
