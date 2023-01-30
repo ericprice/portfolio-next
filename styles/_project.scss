@@ -86,6 +86,12 @@
       }
     }
     
+    .project-meta-secondary-item {
+      @include breakpoint($s) {
+        margin-bottom: var(--leading);
+      }
+    }
+    
     .project-meta-secondary-url {
       grid-column: span 6;
       

@@ -405,10 +405,24 @@ textarea {
 
 .project-meta-header-collaborators {
   @include breakpoint($s) {
-    display: none;
     order: 4;
+    font-size: .667rem;
+    line-height: var(--leading);
+    padding-top: .08rem;
+    letter-spacing: .02em;
+    
+    &::before {
+      content: 'w/';
+    }
+    
+    #project &,
+    .projects-list-header & {
+      display: none;
+    }
   }
 }
+
+
 
 .project-meta-header-media {
   grid-column: span 10;
