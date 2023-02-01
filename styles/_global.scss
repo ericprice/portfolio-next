@@ -523,7 +523,7 @@ textarea {
       
       @media (hover: none) {
         .project-meta-header-title::after {
-          content: ' ↗ ';
+          content: ' ↗';
         }
       }
     }
@@ -534,7 +534,7 @@ textarea {
       }
       
       &::before {
-        content: '→ Case study';
+        content: 'Case study';
       }
     }
     
