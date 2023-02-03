@@ -598,11 +598,11 @@ textarea {
         }
         
         .project-preview-thumbnail {
-          transition: opacity .3s ease-in .667s;
+          transition: opacity .1s ease-in .25s;
           opacity: 1;
           
           .scrolling & {
-            transition: opacity .25s ease-in-out 0s;
+            transition: opacity .1s ease-in-out 0s;
             opacity: 0;
           }
         }
@@ -623,7 +623,7 @@ textarea {
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
-      transition: opacity .25s ease-in-out 0s;
+      //transition: opacity .25s ease-in-out 0s;
       mix-blend-mode: screen;
       filter: grayscale(1);
       
