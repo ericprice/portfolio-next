@@ -20,6 +20,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'italicizeTitle',
+      title: 'Italicize Title',
+      type: 'boolean',
+    },
+    {
       name: 'client',
       title: 'Client',
       type: 'reference',

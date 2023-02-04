@@ -14,6 +14,7 @@ import { sanityConfig } from '../lib/config'
 
 export default function ProjectPreview({
   title,
+  italicizeTitle,
   featuredImage,
   featuredFile,
   coverImage,

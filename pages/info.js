@@ -37,9 +37,6 @@ export default function Info() {
                   <li>Sound design</li>
                   <li>Web design</li>
                   <li>Web development</li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
                 </ul>
               </div>
             </section>
