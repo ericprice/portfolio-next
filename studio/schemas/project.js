@@ -23,6 +23,7 @@ export default {
       name: 'italicizeTitle',
       title: 'Italicize Title',
       type: 'boolean',
+      initialValue: false,
     },
     {
       name: 'client',
