@@ -99,9 +99,12 @@ export default function ProjectPreview({
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
-              <FeaturedImage image={featuredImage} />
-              {featuredFile && (
-                <FeaturedFile file={featuredFile} />
+              {featuredImage && featuredFile ? (
+                <FeaturedFile file={featuredFile} poster={featuredImage} />
+              ) : featuredImage ? (
+                <FeaturedImage image={featuredImage} />
+              ) : (
+                <></>
               )}
             </div>
             <CoverImage image={coverImage} />
@@ -135,9 +138,12 @@ export default function ProjectPreview({
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
-              <FeaturedImage image={featuredImage} />
-              {featuredFile && (
-                <FeaturedFile file={featuredFile} />
+              {featuredImage && featuredFile ? (
+                <FeaturedFile file={featuredFile} poster={featuredImage} />
+              ) : featuredImage ? (
+                <FeaturedImage image={featuredImage} />
+              ) : (
+                <></>
               )}
             </div>
             <CoverImage image={coverImage} />
@@ -171,9 +177,12 @@ export default function ProjectPreview({
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
-              <FeaturedImage image={featuredImage} />
-              {featuredFile && (
-                <FeaturedFile file={featuredFile} />
+              {featuredImage && featuredFile ? (
+                <FeaturedFile file={featuredFile} poster={featuredImage} />
+              ) : featuredImage ? (
+                <FeaturedImage image={featuredImage} />
+              ) : (
+                <></>
               )}
             </div>
             <CoverImage image={coverImage} />
