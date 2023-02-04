@@ -26,6 +26,23 @@ export default function Info() {
                 </ul>
               </div>
             </section>
+            <section className="info-section info-section-contact">
+              <h3 className="info-heading">Services</h3>
+              <div className="info-content">
+                <ul>
+                  <li>Branding &amp; identity design</li>
+                  <li>Motion design</li>
+                  <li>Print design</li>
+                  <li>Publication &amp; book design</li>
+                  <li>Sound design</li>
+                  <li>Web design</li>
+                  <li>Web development</li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </section>
             <section className="info-section info-section-clients">
               <h3 className="info-heading">Clients &amp; collaborators</h3>
               <div className="info-content">

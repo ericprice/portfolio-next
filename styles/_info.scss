@@ -6,15 +6,11 @@
   }
   
   .info-section {
-    grid-column: span 12;
+    grid-column: span 6;
     margin-bottom: var(--leading);
     
     @include breakpoint($m-up) {
       grid-column: span 3;
-      
-      &.info-section-clients {
-        grid-column: span 6;
-      }
     }
   }
   
@@ -80,44 +76,9 @@
     }
   }
   
-  .info-section-contact {
-    @include breakpoint($s) {
-      .info-content {
-        column-count: 2;
-        column-gap: var(--gap);
-        
-        p {
-          break-inside: avoid;
-        }
-      }
-    }
-  }
-  
-  .info-section-clients {
-    .info-content {
-      column-count: 2;
-      column-gap: var(--gap);
-      
-      li {
-        break-inside: avoid;
-      }
-    }
-  }
-  
   .info-section-press {
     ul {
       margin-bottom: calc(var(--leading) / 2);
-    }
-    
-    @include breakpoint($s) {
-      .info-content {
-        column-count: 2;
-        column-gap: var(--gap);
-        
-        .info-content-section {
-          break-inside: avoid;
-        }
-      }
     }
   }
   
