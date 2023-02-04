@@ -9,7 +9,7 @@ export default function CoverFile({ file, poster: source, priority }) {
   
   if (source?.asset?._ref) {
     var { aspectRatio, height, width } = getImageDimensions({
-      url: urlForImage(source).width(1400).quality(25).url()
+      url: urlForImage(source).width(1400).quality(10).url()
     })
     
     var trueHeight = 1400 / aspectRatio;
@@ -18,7 +18,7 @@ export default function CoverFile({ file, poster: source, priority }) {
   const video = source?.asset?._ref ? (
     <div className="project-meta-header-item project-meta-header-media">
       <LazyLoad offset={600} once>
-        <video loop={true} autoPlay={true} muted={true} playsInline={true} poster={urlForImage(source).width(1400).quality(25).url()} width="1400" height={trueHeight}>
+        <video loop={true} autoPlay={true} muted={true} playsInline={true} poster={urlForImage(source).width(1400).quality(10).url()} width="1400" height={trueHeight}>
           <source src={theFile.asset.url} type="video/mp4"></source>
         </video>
       </LazyLoad>
