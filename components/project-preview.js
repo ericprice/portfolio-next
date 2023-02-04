@@ -81,7 +81,13 @@ export default function ProjectPreview({
             <Date dateString={date} />
             <div className="project-preview-content-inner">
               <h3 className="project-meta-header-item project-meta-header-title">
-                {title}
+                {italicizeTitle == true ? (
+                  <cite>{title}</cite>
+                ) : (
+                  <>
+                    {title}
+                  </>
+                )}
               </h3>
               {client?.name && !sameTitleAndClient ? (
                 <div className="project-meta-header-item project-meta-header-client">
@@ -120,7 +126,13 @@ export default function ProjectPreview({
             <Date dateString={date} />
             <div className="project-preview-content-inner">
               <h3 className="project-meta-header-item project-meta-header-title">
-                {title}
+                {italicizeTitle == true ? (
+                  <cite>{title}</cite>
+                ) : (
+                  <>
+                    {title}
+                  </>
+                )}
               </h3>
               {client?.name && !sameTitleAndClient ? (
                 <div className="project-meta-header-item project-meta-header-client">
@@ -159,7 +171,13 @@ export default function ProjectPreview({
             <Date dateString={date} />
             <div className="project-preview-content-inner">
               <h3 className="project-meta-header-item project-meta-header-title">
-                {title}
+                {italicizeTitle == true ? (
+                  <cite>{title}</cite>
+                ) : (
+                  <>
+                    {title}
+                  </>
+                )}
               </h3>
               {client?.name && !sameTitleAndClient ? (
                 <div className="project-meta-header-item project-meta-header-client">
@@ -222,7 +240,13 @@ export default function ProjectPreview({
             <Date dateString={date} />
             <div className="project-preview-content-inner">
               <h3 className="project-meta-header-item project-meta-header-title">
-                {title}
+                {italicizeTitle == true ? (
+                  <cite>{title}</cite>
+                ) : (
+                  <>
+                    {title}
+                  </>
+                )}
               </h3>
               {client?.name && !sameTitleAndClient ? (
                 <div className="project-meta-header-item project-meta-header-client">
@@ -241,9 +265,12 @@ export default function ProjectPreview({
                   {collaborators.map(collaborator => <li key={collaborator.name}>{collaborator.name}</li>)}
                 </ul>
               )}
-              <FeaturedImage image={featuredImage} />
-              {featuredFile && (
-                <FeaturedFile file={featuredFile} />
+              {featuredImage && featuredFile ? (
+                <FeaturedFile file={featuredFile} poster={featuredImage} />
+              ) : featuredImage ? (
+                <FeaturedImage image={featuredImage} />
+              ) : (
+                <></>
               )}
             </div>
             <CoverImage image={coverImage} />

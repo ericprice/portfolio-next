@@ -53,7 +53,15 @@ export default function Project({ project, moreProjects }) {
             </div>
             <div className="project-meta-header-item project-meta-header-title">
               <h3 className="project-meta-header-item-heading">Project</h3>
-              <h2 className="project-title">{project.title}</h2>
+              <h2 className="project-title">
+                {project.italicizeTitle == true ? (
+                  <cite>{project.title}</cite>
+                ) : (
+                  <>
+                    {project.title}
+                  </>
+                )}
+              </h2>
             </div>
             {project.client?.name ? (
               <div className="project-meta-header-item project-meta-header-client">
