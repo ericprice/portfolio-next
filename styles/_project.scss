@@ -71,6 +71,17 @@
         grid-column: span 4;
       }
     }
+    
+    .project-text-content {
+      p {
+        text-indent: 2em;
+        margin-bottom: 0;
+        
+        &:first-child {
+          text-indent: 0;
+        }
+      }
+    }
   }
   
   .project-meta-secondary {
