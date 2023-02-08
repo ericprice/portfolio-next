@@ -26,7 +26,7 @@ export default function Info() {
                 </ul>
               </div>
             </section>
-            <section className="info-section info-section-contact">
+            <section className="info-section info-section-services">
               <h3 className="info-heading">Services</h3>
               <div className="info-content">
                 <ul>

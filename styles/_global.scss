@@ -149,6 +149,11 @@ textarea {
       url('/images/cursor-black.svg') 1x,
       url('/images/cursor-black@2x.svg') 2x
     ) 6 6, auto;
+    
+    ::selection {
+      background: rgba($main-color, .97);
+      color: $main-bg;
+    }
   }
   
   &#info {
@@ -159,6 +164,11 @@ textarea {
       url('/images/cursor-gray.svg') 1x,
       url('/images/cursor-gray@2x.svg') 2x
     ) 6 6, auto;
+    
+    ::selection {
+      background: rgba($main-bg, .97);
+      color: $main-color;
+    }
     
     a {
       color: $main-bg;
@@ -172,13 +182,17 @@ textarea {
   }
   
   &#project {
-    //background: $accent;
     color: $main-color;
     cursor: url('/images/cursor-black.svg') 6 6, auto;
     cursor: -webkit-image-set(
       url('/images/cursor-black.svg') 1x,
       url('/images/cursor-black@2x.svg') 2x
     ) 6 6, auto;
+    
+    ::selection {
+      background: rgba($main-color, .97);
+      color: $accent;
+    }
     
     a {
       color: $main-color;
