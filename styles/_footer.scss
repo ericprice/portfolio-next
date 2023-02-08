@@ -1,10 +1,13 @@
 .site-footer {
+  position: sticky;
+  bottom: 0;
   border-top: 1px solid $main-color;
   margin-top: -1px;
-  padding-top: calc(var(--leading) / 3);
+  padding: calc(var(--leading) / 3) 0;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
+  background: $main-bg;
   
   .at-symbol {
     vertical-align: .0825em;

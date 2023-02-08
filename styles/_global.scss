@@ -143,6 +143,7 @@ textarea {
   min-height: 100vh;
   
   &#home {
+    padding-bottom: 0;
     cursor: url('/images/cursor-black.svg') 6 6, auto;
     cursor: -webkit-image-set(
       url('/images/cursor-black.svg') 1x,
