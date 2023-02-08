@@ -33,7 +33,7 @@ export default function Index({ allProjects }) {
           <footer className="site-footer">
             <div className="site-footer-item site-footer-revision">Rev. 2023-02-08</div>
             <div className="site-footer-item site-footer-contact">
-              <a href="mailto:info@ericprice.info">info<span className="at-symbol">@</span>ericprice.info</a>
+              <a href="mailto:info@ericprice.info">info@ericprice.info</a>
             </div>
           </footer>
         </div>
