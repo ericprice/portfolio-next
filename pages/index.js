@@ -24,7 +24,7 @@ export default function Index({ allProjects }) {
   return (
     <Layout>
       <Head>
-        <title>Eric Price &ndash; Graphic design &amp; programming</title>
+        <title>Eric Price</title>
       </Head>
       <Container pageName="home">
         <div className="site-inner-container">
