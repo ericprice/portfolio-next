@@ -18,7 +18,7 @@ export default function Info() {
               <h3 className="info-heading">Contact</h3>
               <div className="info-content">
                 <p>Studio Eric Price<br />543 Court Street #3<br />Brooklyn, NY 11231 USA<br />+1 612 618 0789<br /><a href="mailto:info@ericprice.info">info@ericprice.info</a></p>
-                <ul>
+                <ul className="info-social">
                   <li><a href="https://github.com/ericprice">GitHub</a></li>
                   <li><a href="https://instagram.com/ericprice">Instagram</a></li>
                   <li><a href="https://typo.social/@ericprice" rel="me">Mastodon</a></li>
