@@ -31,10 +31,10 @@ export default function Index({ allProjects }) {
           <Header />
           {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
           <footer className="site-footer">
+            <div className="site-footer-item site-footer-revision">Rev. 2023-02-08</div>
             <div className="site-footer-item site-footer-contact">
               <a href="mailto:info@ericprice.info">info<span className="at-symbol">@</span>ericprice.info</a>
             </div>
-            <div className="site-footer-item site-footer-revision">Rev. 2023-02-08</div>
           </footer>
         </div>
       </Container>
