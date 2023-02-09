@@ -3,10 +3,13 @@
   bottom: 0;
   border-top: 1px solid $main-color;
   margin-top: -1px;
-  padding: calc(var(--leading) / 3) 0;
+  padding: calc(var(--leading) / 3) 0 calc(var(--outer-margin-y) - 2px);
   display: flex;
   justify-content: space-between;
-  text-transform: uppercase;
   background: $main-bg;
   font-feature-settings: 'case';
+  
+  .site-footer-contact {
+    text-transform: uppercase;
+  }
 }

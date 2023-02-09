@@ -144,11 +144,11 @@ textarea {
   
   &#home {
     padding-bottom: 0;
-    cursor: url('/images/cursor-black.svg') 6 6, auto;
-    cursor: -webkit-image-set(
-      url('/images/cursor-black.svg') 1x,
-      url('/images/cursor-black@2x.svg') 2x
-    ) 6 6, auto;
+    //cursor: url('/images/cursor-black.svg') 6 6, auto;
+    //cursor: -webkit-image-set(
+    //  url('/images/cursor-black.svg') 1x,
+    //  url('/images/cursor-black@2x.svg') 2x
+    //) 6 6, auto;
     
     ::selection {
       background: rgba($main-color, .97);
@@ -159,11 +159,11 @@ textarea {
   &#info {
     background: $main-color;
     color: $main-bg;
-    cursor: url('/images/cursor-gray.svg') 6 6, auto;
-    cursor: -webkit-image-set(
-      url('/images/cursor-gray.svg') 1x,
-      url('/images/cursor-gray@2x.svg') 2x
-    ) 6 6, auto;
+    //cursor: url('/images/cursor-gray.svg') 6 6, auto;
+    //cursor: -webkit-image-set(
+    //  url('/images/cursor-gray.svg') 1x,
+    //  url('/images/cursor-gray@2x.svg') 2x
+    //) 6 6, auto;
     
     ::selection {
       background: rgba($main-bg, .97);
@@ -183,11 +183,11 @@ textarea {
   
   &#project {
     color: $main-color;
-    cursor: url('/images/cursor-black.svg') 6 6, auto;
-    cursor: -webkit-image-set(
-      url('/images/cursor-black.svg') 1x,
-      url('/images/cursor-black@2x.svg') 2x
-    ) 6 6, auto;
+    //cursor: url('/images/cursor-black.svg') 6 6, auto;
+    //cursor: -webkit-image-set(
+    //  url('/images/cursor-black.svg') 1x,
+    //  url('/images/cursor-black@2x.svg') 2x
+    //) 6 6, auto;
     
     ::selection {
       background: rgba($main-color, .97);
@@ -593,6 +593,7 @@ textarea {
           left: 0;
           background: url('/images/disabled.png');
           background-size: 2px 2px;
+          pointer-events: none;
         }
       }
     }
