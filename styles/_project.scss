@@ -105,6 +105,10 @@
       @include breakpoint($s) {
         margin-bottom: var(--leading);
       }
+      
+      > *:last-child {
+        margin-bottom: 0;
+      }
     }
     
     .project-meta-secondary-url {
@@ -152,6 +156,11 @@
     display: grid;
     gap: 0 var(--gap);
     grid-template-columns: repeat(12, 1fr);
+    margin-top: var(--leading);
+    
+    @include breakpoint($m-up) {
+      margin-top: calc(var(--leading) * 3);
+    }
     
     .project-media-item {
       line-height: 0;
