@@ -11,23 +11,14 @@
   
   .site-footer-item {
     flex-shrink: 0;
-    width: 33.33%;
     
-    @include breakpoint($s) {
-      width: 50%;
+    @include breakpoint($m-up) {
+      width: 33.33%;
     }
   }
   
   .site-footer-revision {
     text-align: center;
-    
-    @include breakpoint($s) {
-      text-align: left;
-    }
-  }
-  
-  .site-footer-copyright {
-    text-align: left;
     
     @include breakpoint($s) {
       display: none;
