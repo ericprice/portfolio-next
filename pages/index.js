@@ -31,7 +31,7 @@ export default function Index({ allProjects }) {
           <Header />
           {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
           <footer className="site-footer">
-            <div className="site-footer-item site-footer-copyright">&copy;2023 Studio Eric Price LLC</div>
+            <div className="site-footer-item site-footer-copyright">&copy;{new Date().getFullYear()} Studio Eric Price LLC</div>
             <div className="site-footer-item site-footer-revision">Rev. 2/2023</div>
             <div className="site-footer-item site-footer-contact">
               <a href="mailto:info@ericprice.info">info@ericprice.info</a>
