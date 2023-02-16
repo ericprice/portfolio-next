@@ -30,6 +30,7 @@ export default function Info() {
               <h3 className="info-heading">Services</h3>
               <div className="info-content">
                 <ul>
+                  <li>Art direction</li>
                   <li>Branding &amp; identity design</li>
                   <li>Motion design</li>
                   <li>Print design</li>

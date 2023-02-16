@@ -1,6 +1,6 @@
 .site-footer {
-  position: sticky;
-  bottom: 0;
+  //position: sticky;
+  //bottom: 0;
   border-top: 1px solid $main-color;
   margin-top: -1px;
   padding: calc(var(--leading) / 3) 0 calc(var(--outer-margin-y) - 2px);
@@ -9,7 +9,33 @@
   background: $main-bg;
   font-feature-settings: 'case';
   
+  .site-footer-item {
+    flex-shrink: 0;
+    width: 33.33%;
+    
+    @include breakpoint($s) {
+      width: 50%;
+    }
+  }
+  
+  .site-footer-revision {
+    text-align: center;
+    
+    @include breakpoint($s) {
+      text-align: left;
+    }
+  }
+  
+  .site-footer-copyright {
+    text-align: left;
+    
+    @include breakpoint($s) {
+      display: none;
+    }
+  }
+  
   .site-footer-contact {
+    text-align: right;
     text-transform: uppercase;
   }
 }
