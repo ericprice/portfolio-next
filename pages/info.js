@@ -13,11 +13,11 @@ export default function Info() {
         <div className="site-inner-container">
           <Header />
           <div className="info">
-            <h2 className="info-statement">Eric Price is a Brooklyn-based graphic designer and programmer specializing in identity, web, and publishing for arts and culture.</h2>
+            {/* <h2 className="info-statement">Eric Price is a Brooklyn-based graphic designer and programmer specializing in identity, web, and publishing for arts and culture.</h2> */}
             <section className="info-section info-section-contact">
               <h3 className="info-heading">Contact</h3>
               <div className="info-content">
-                <p>Studio Eric Price LLC<br />543 Court Street #3<br />Brooklyn, NY 11231 USA<br /><a href="mailto:info@ericprice.info">info@ericprice.info</a><br />+1 612 618 0789</p>
+                <p>Studio Eric Price LLC<br />543 Court Street #3<br />Brooklyn, NY 11231 USA<br /><a href="mailto:info@ericprice.info">info@ericprice.info</a><br />+1 (612) 618 0789</p>
                 <ul className="info-social">
                   <li><a href="https://github.com/ericprice">GitHub</a></li>
                   <li><a href="https://instagram.com/ericprice">Instagram</a></li>

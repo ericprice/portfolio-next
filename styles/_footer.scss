@@ -7,7 +7,6 @@
   display: flex;
   justify-content: space-between;
   background: $main-bg;
-  font-feature-settings: 'case';
   
   .site-footer-item {
     flex-shrink: 0;
@@ -28,5 +27,6 @@
   .site-footer-contact {
     text-align: right;
     text-transform: uppercase;
+    font-feature-settings: "ss17" 1;
   }
 }

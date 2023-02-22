@@ -1,7 +1,8 @@
 .site-header {
   margin-bottom: var(--leading);
   
-  #project & {
+  #project &,
+  #info & {
     margin-bottom: 0;
   }
   
@@ -33,6 +34,7 @@
     position: absolute;
     top: 0;
     text-transform: uppercase;
+    font-feature-settings: "ss17" 1;
     background: $main-bg;
     width: 50%;
     padding-top: var(--outer-margin-y);
