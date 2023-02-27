@@ -88,7 +88,7 @@ export default function Info() {
                 <section className="info-content-section">
                   <h3 className="info-heading">2018</h3>
                   <ul>
-                    <li>Tam O’Shanter Drawing Sessions: Ways of Graphic Design-ing, Carnegie Museum of&nbsp;Art</li>
+                    <li>Tam O’Shanter Drawing Sessions: <em>Ways of Graphic Design-ing</em>, Carnegie Museum of&nbsp;Art</li>
                   </ul>
                 </section>
                 <section className="info-content-section">
