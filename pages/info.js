@@ -111,7 +111,7 @@ export default function Info() {
                     <li>Design Show, AIGA&nbsp;Minnesota</li>
                     <li>Best in Show, Museums and the&nbsp;Web</li>
                     <li>Innovative, Museums and the&nbsp;Web</li>
-                    <li>PowerPoint, Art of This&nbsp;Gallery</li>
+                    <li><em>PowerPoint</em>, Art of This&nbsp;Gallery</li>
                     <li>Finalist, Webby&nbsp;Awards</li>
                   </ul>
                 </section>
