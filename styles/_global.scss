@@ -257,7 +257,7 @@ textarea {
   }
   
   #home & {
-    padding: calc(var(--leading) / 3 + 1px) 0;
+    padding: calc(var(--leading) / 3) 0;
     visibility: hidden;
     margin-top: -1px;
     
@@ -509,7 +509,7 @@ textarea {
     &::before {
       display: none;
       position: absolute;
-      top: calc(var(--leading) / 3);
+      top: calc(var(--leading) / 3 - 1px);
       left: 0;
       width: 12rem;
       pointer-events: none;
