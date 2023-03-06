@@ -29,7 +29,7 @@ $accent: #fff;
 }
 
 html {
-  font-size: 14px;
+  font-size: 13px;
 
   @include breakpoint($m-up) {
     font-size: 1.28vw;
@@ -227,8 +227,12 @@ textarea {
     padding-top: 1px;
     z-index: 50;
     background: $main-bg;
-    border-bottom: 1px solid $main-color;
+    border-bottom: .825px solid $main-color;
     padding-bottom: calc(var(--leading) / 3);
+    
+    @include breakpoint($m-up) {
+      border-bottom-width: 1px;
+    }
   }
   
   .project-meta-header-item-heading {
@@ -259,7 +263,11 @@ textarea {
   #home & {
     padding: calc(var(--leading) / 3) 0;
     visibility: hidden;
-    margin-top: -1px;
+    margin-top: -.825px;
+    
+    @include breakpoint($m-up) {
+      margin-top: -1px;
+    }
     
     &::after {
       content: '';
@@ -267,7 +275,11 @@ textarea {
       top: 0;
       left: 0;
       width: calc(100% + var(--gap));
-      border-top: 1px solid $main-color;
+      border-top: .825px solid $main-color;
+      
+      @include breakpoint($m-up) {
+        border-top-width: 1px;
+      }
     }
   }
   
@@ -482,7 +494,11 @@ textarea {
   }
   
   .project-preview[data-start-of-year=true] .project-preview-content-inner {
-    border-top: 1px solid $main-color !important;
+    border-top: .825px solid $main-color !important;
+    
+    @include breakpoint($m-up) {
+      border-top-width: 1px;
+    }
   }
   
   .project-preview-content {
@@ -495,27 +511,34 @@ textarea {
       display: grid;
       gap: 0 var(--gap);
       grid-template-columns: repeat(10, 1fr);
-      padding: calc(var(--leading) / 3 - 1px) 0 calc(var(--leading) / 3);
-      border-top: 1px solid $main-color;
-      margin-top: -1px;
+      padding: calc(var(--leading) / 3 - .825px) 0 calc(var(--leading) / 3);
+      border-top: .825px solid $main-color;
+      margin-top: -.825px;
       grid-column: span 10;
       
       @include breakpoint($m-up) {
+        padding: calc(var(--leading) / 3 - 1px) 0 calc(var(--leading) / 3);
         grid-column: span 10;
         grid-template-columns: repeat(10, 1fr);
+        border-top-width: 1px;
+        margin-top: -1px;
       }
     }
     
     &::before {
       display: none;
       position: absolute;
-      top: calc(var(--leading) / 3 - 1px);
+      top: calc(var(--leading) / 3 - .825px);
       left: 0;
       width: 12rem;
       pointer-events: none;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      
+      @include breakpoint($m-up) {
+        top: calc(var(--leading) / 3 - 1px);
+      }
       
       @include breakpoint($xl) {
         width: auto;
@@ -524,7 +547,11 @@ textarea {
     
     &.project-preview-external-link {
       .project-preview-content-inner {
-        border-bottom: 1px solid $main-color;
+        border-bottom: .825px solid $main-color;
+        
+        @include breakpoint($m-up) {
+          border-bottom-width: 1px;
+        }
       }
       
       &:hover {
@@ -562,7 +589,11 @@ textarea {
     
     &.project-preview-snippet {
       .project-preview-content-inner {
-        border-bottom: 1px solid $main-color;
+        border-bottom: .825px solid $main-color;
+        
+        @include breakpoint($m-up) {
+          border-bottom-width: 1px;
+        }
       }
       
       &::before {
@@ -584,7 +615,11 @@ textarea {
     
     &.project-preview-disabled {
       .project-preview-content-inner {
-        border-top: 1px dotted $main-color;
+        border-top: .825px dotted $main-color;
+        
+        @include breakpoint($m-up) {
+          border-top-width: 1px;
+        }
       }
       
       .project-preview-content-inner .project-meta-header-item {
