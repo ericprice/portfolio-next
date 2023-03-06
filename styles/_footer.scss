@@ -1,17 +1,12 @@
 .site-footer {
   //position: sticky;
   //bottom: 0;
-  border-top: .825px solid $main-color;
-  margin-top: -.825px;
+  border-top: 1px solid $main-color;
+  margin-top: -1px;
   padding: calc(var(--leading) / 3) 0 calc(var(--outer-margin-y) - 2px);
   display: flex;
   justify-content: space-between;
   background: $main-bg;
-  
-  @include breakpoint($m-up) {
-    border-top-width: 1px;
-    margin-top: -1px;
-  }
   
   .site-footer-item {
     flex-shrink: 0;
