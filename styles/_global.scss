@@ -622,7 +622,7 @@ textarea {
         }
         
         .project-preview-thumbnail {
-          transition: opacity .1s ease-in .25s;
+          transition: opacity .1s ease-in .5s;
           opacity: 1;
           
           .scrolling & {
@@ -647,7 +647,7 @@ textarea {
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
-      //transition: opacity .25s ease-in-out 0s;
+      transition: opacity .25s ease-in-out 0s;
       mix-blend-mode: screen;
       filter: grayscale(1);
       
