@@ -147,8 +147,8 @@ textarea {
   padding: var(--outer-margin-y) var(--outer-margin-x);
   min-height: 100vh;
   
-  &#home {
-    padding-bottom: 0;
+  &#home,
+  &#error {
     cursor: url('/images/cursor-black.svg') 6 6, auto;
     cursor: -webkit-image-set(
       url('/images/cursor-black.svg') 1x,
@@ -159,6 +159,10 @@ textarea {
       background: rgba($main-color, .97);
       color: $main-bg;
     }
+  }
+  
+  &#home {
+    padding-bottom: 0;
   }
   
   &#info {
@@ -663,5 +667,33 @@ textarea {
         max-height: calc(100vh - 18rem);
       }
     }
+  }
+}
+
+#error {
+  min-height: 100vh;
+  //background: red;
+  
+  .error-heading {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 3rem;
+    line-height: var(--leading);
+    
+    @include breakpoint($m-up) {
+      font-size: 9rem;
+      line-height: var(--leading);
+    }
+  }
+  
+  .site-footer {
+    position: absolute;
+    right: var(--outer-margin-x);
+    bottom: 0;
+    left: var(--outer-margin-x);
   }
 }

@@ -1,4 +1,3 @@
-import Footer from '../components/footer'
 import Meta from '../components/meta'
 
 export default function Layout({ children }) {
@@ -6,7 +5,6 @@ export default function Layout({ children }) {
     <>
       <Meta />
       <main>{children}</main>
-      <Footer />
     </>
   )
 }

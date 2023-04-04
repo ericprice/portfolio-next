@@ -1,36 +1,24 @@
 import Head from 'next/head'
 import { useEffect } from 'react';
 import Container from '../components/container'
-import ProjectsList from '../components/projects-list'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Layout from '../components/layout'
+import Link from 'next/link'
 import { indexQuery } from '../lib/queries'
 import { client } from '../lib/sanity.server'
 
 export default function Index({ allProjects }) {
   useEffect( () => { document.querySelector('body').classList.remove('project') } );
-  var scrollTimeout
-  useEffect( () => {
-    document.addEventListener('scroll', ()=> {
-      if (!document.querySelector('body').classList.contains('scrolling')) {
-        document.querySelector('body').classList.add('scrolling')
-      }
-      clearTimeout(scrollTimeout)
-      scrollTimeout = setTimeout(function() {
-        document.querySelector('body').classList.remove('scrolling')
-      }, 150)
-    });
-   }, []);
   return (
     <Layout>
       <Head>
-        <title>Eric Price</title>
+        <title>Eric Price &ndash; 404</title>
       </Head>
-      <Container pageName="home">
+      <Container pageName="error">
         <div className="site-inner-container">
           <Header />
-          {allProjects.length > 0 && <ProjectsList projects={allProjects} />}
+          <h2 class="error-heading">404 Not Found<br />(<Link href="/">&rarr; Home</Link>)</h2>
           <Footer />
         </div>
       </Container>
