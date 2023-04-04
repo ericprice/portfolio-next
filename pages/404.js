@@ -18,7 +18,7 @@ export default function Index({ allProjects }) {
       <Container pageName="error">
         <div className="site-inner-container">
           <Header />
-          <h2 class="error-heading">404 Not Found<br /><Link href="/">(&rarr; Home)</Link></h2>
+          <h2 class="error-heading">&ldquo;404 Not Found&rdquo;<br /><Link href="/">(&rarr; Home)</Link></h2>
           <Footer />
         </div>
       </Container>
