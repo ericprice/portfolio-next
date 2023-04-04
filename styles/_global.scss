@@ -671,8 +671,10 @@ textarea {
 }
 
 #error {
+  position: relative;
   min-height: 100vh;
   background: #f00;
+  user-select: none;
   
   .site-header .site-header-title,
   .site-header .site-header-info,
@@ -682,10 +684,6 @@ textarea {
     &::after {
       display: none;
     }
-  }
-  
-  .site-footer {
-    border-top: 0;
   }
   
   .error-heading {
@@ -705,15 +703,18 @@ textarea {
     }
     
     a {
-      display: block;
+      display: inline-block;
       transform: rotate(180deg);
     }
   }
   
   .site-footer {
     position: absolute;
-    right: var(--outer-margin-x);
     bottom: 0;
-    left: var(--outer-margin-x);
+    left: 50%;
+    width: calc(100vw - var(--outer-margin-x) * 2);
+    max-width: var(--max-width);
+    transform: translateX(-50%);
+    border-top: 0;
   }
 }
