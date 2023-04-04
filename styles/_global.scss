@@ -697,6 +697,10 @@ textarea {
     line-height: var(--leading);
     font-feature-settings: 'zero' 1;
     
+    @include breakpoint($m) {
+      font-weight: normal;
+    }
+    
     @include breakpoint($m-up) {
       font-size: 9rem;
       line-height: var(--leading);
