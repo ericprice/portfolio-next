@@ -672,7 +672,21 @@ textarea {
 
 #error {
   min-height: 100vh;
-  //background: red;
+  background: #f00;
+  
+  .site-header .site-header-title,
+  .site-header .site-header-info,
+  .site-footer {
+    background: #f00;
+    
+    &::after {
+      display: none;
+    }
+  }
+  
+  .site-footer {
+    border-top: 0;
+  }
   
   .error-heading {
     position: absolute;
