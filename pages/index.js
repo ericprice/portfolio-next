@@ -22,6 +22,26 @@ export default function Index({ allProjects }) {
       }, 150)
     });
    }, []);
+   
+   if (typeof window !== 'undefined') {
+     const searchInput = document.querySelector('#search-input');
+     const projectsList = document.querySelector('.projects-list');
+     const projects = projectsList.querySelectorAll('.project-preview');
+     
+     searchInput.addEventListener('input', () => {
+       const searchTerm = searchInput.value.trim().toLowerCase();
+     
+       projects.forEach((project) => {
+         const title = project.querySelector('.project-preview-content').textContent.trim().toLowerCase();
+     
+         if (title.includes(searchTerm)) {
+           project.style.display = 'block';
+         } else {
+           project.style.display = 'none';
+         }
+       });
+     });
+   }
   return (
     <Layout>
       <Head>

@@ -490,6 +490,29 @@ textarea {
     border-top: 1px solid $main-color !important;
   }
   
+  .projects-year {
+    position: relative;
+    border-top: 1px solid $main-color;
+    //overflow: hidden;
+    margin-top: -1px;
+    
+    .projects-year-heading-container {
+      position: sticky;
+      top: calc(var(--leading) * 2.333 + var(--outer-margin-y));
+      left: 0;
+      height: 0;
+      pointer-events: none;
+      
+      .projects-year-heading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: calc(var(--leading) / 3 - 1px) 0 calc(var(--leading) / 3);
+        background: $main-bg;
+      }
+    }
+  }
+  
   .project-preview-content {
     position: relative;
     display: grid;
@@ -514,13 +537,16 @@ textarea {
     &::before {
       display: none;
       position: absolute;
-      top: calc(var(--leading) / 3 - 1px);
+      top: 0;
+      padding: calc(var(--leading) / 3 - 1px) 0 calc(var(--leading) / 3);
       left: 0;
       width: 12rem;
       pointer-events: none;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      background: $main-bg;
+      //border-top: 1px solid $main-color;
       
       @include breakpoint($xl) {
         width: auto;

@@ -1,12 +1,14 @@
 .site-footer {
   //position: sticky;
   //bottom: 0;
+  position: relative;
   border-top: 1px solid $main-color;
   margin-top: -1px;
   padding: calc(var(--leading) / 3) 0 calc(var(--outer-margin-y) - 2px);
   display: flex;
   justify-content: space-between;
   background: $main-bg;
+  z-index: 10;
   
   .site-footer-item {
     flex-shrink: 0;
