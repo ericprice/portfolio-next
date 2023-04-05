@@ -26,8 +26,7 @@ export default function ProjectPreview({
   categories,
   collaborators,
   url,
-  urlLabel,
-  startOfYear
+  urlLabel
 }) {
   const [open, setOpen] = React.useState(false);
   if (client?.name == title) {
@@ -76,7 +75,7 @@ export default function ProjectPreview({
   return (
     <>
       {externalLink ? (
-        <div className="project-preview" data-start-of-year={startOfYear}>
+        <div className="project-preview">
           <a className="project-preview-content project-preview-external-link" href={url} target="_new" data-url-label={urlLabel}>
             <Date dateString={date} />
             <div className="project-preview-content-inner">
@@ -121,7 +120,7 @@ export default function ProjectPreview({
           </a>
         </div>
       ) : caseStudy ? (
-        <div className="project-preview" data-start-of-year={startOfYear}>
+        <div className="project-preview">
           <Link className="project-preview-content project-preview-case-study" href={`/projects/${slug}`}>
             <Date dateString={date} />
             <div className="project-preview-content-inner">
@@ -166,7 +165,7 @@ export default function ProjectPreview({
           </Link>
         </div>
       ) : snippet ? (
-        <div className="project-preview" data-start-of-year={startOfYear}>
+        <div className="project-preview">
           <a onClick={() => setOpen(true)} className="project-preview-content project-preview-snippet">
             <Date dateString={date} />
             <div className="project-preview-content-inner">
@@ -235,7 +234,7 @@ export default function ProjectPreview({
           />
         </div>
       ) : (
-        <div className="project-preview" data-start-of-year={startOfYear}>
+        <div className="project-preview">
           <div className="project-preview-content project-preview-disabled">
             <Date dateString={date} />
             <div className="project-preview-content-inner">
