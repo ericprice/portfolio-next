@@ -662,7 +662,7 @@ textarea {
         
         .project-preview-thumbnail {
           transition: opacity .1s ease-in .25s;
-          opacity: .45;
+          opacity: 1;
           
           .scrolling & {
             transition: opacity .1s ease-in-out 0s;

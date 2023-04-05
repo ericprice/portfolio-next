@@ -19,7 +19,7 @@ export default function Index({ allProjects }) {
       clearTimeout(scrollTimeout)
       scrollTimeout = setTimeout(function() {
         document.querySelector('body').classList.remove('scrolling')
-      }, 150)
+      }, 750)
     });
   }, []);
   
