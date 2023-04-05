@@ -462,11 +462,12 @@ textarea {
   grid-column: span 10;
   padding: calc(var(--leading) / 3) 0;
   line-height: 0;
+  filter: grayscale(1) contrast(1.2);
+  opacity: .87;
+  mix-blend-mode: darken;
+  transform: translateZ(0);
   
   @media (hover: hover) {
-    filter: grayscale(1) contrast(1.2);
-    opacity: .87;
-    mix-blend-mode: darken;
     
     .project-preview-content:hover & {
       //filter: brightness(.56) invert(1) grayscale(1) contrast(1.2);
