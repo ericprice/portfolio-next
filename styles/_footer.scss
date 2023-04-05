@@ -18,13 +18,7 @@
   }
   
   .site-footer-search {
-    position: relative;
-    
     input {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
       height: var(--leading);
       line-height: var(--leading);
       @include placeholder-color($main-color);
@@ -37,6 +31,17 @@
       
       &:hover {
         @include placeholder-color($accent);
+      }
+    }
+    
+    @include breakpoint($m-up) {
+      position: relative;
+      
+      input {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
       }
     }
     
@@ -53,6 +58,11 @@
       background-size: .825rem auto;
       text-indent: -99999px;
       overflow: hidden;
+      
+      @include breakpoint($s) {
+        bottom: 0;
+        height: auto;
+      }
       
       &:hover {
         @media (hover: hover) {
