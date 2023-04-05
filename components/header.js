@@ -20,7 +20,6 @@ export default function Intro() {
       <h2 className="site-header-subtitle">
         Graphic design &amp; programming
       </h2>
-      <input type="text" id="search-input" style={{display: 'none'}} />
     </header>
   )
 }
