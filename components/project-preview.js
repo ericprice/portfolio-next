@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import Date from '../components/date'
 import CoverImage from './cover-image'
 import CoverFile from './cover-file'
@@ -7,9 +7,10 @@ import FeaturedFile from './featured-file'
 import Link from 'next/link'
 import { urlForImage } from '../lib/sanity'
 import { getFile } from '@sanity/asset-utils'
-import Lightbox from 'yet-another-react-lightbox';
-import Video from 'yet-another-react-lightbox/plugins/video';
-import 'yet-another-react-lightbox/styles.css';
+import Lightbox from 'yet-another-react-lightbox'
+import Video from 'yet-another-react-lightbox/plugins/video'
+import 'yet-another-react-lightbox/styles.css'
+import Widont from 'widont'
 import { sanityConfig } from '../lib/config'
 
 export default function ProjectPreview({
@@ -72,6 +73,7 @@ export default function ProjectPreview({
       }
     })
   }
+  var widontTitle = Widont(title)
   return (
     <>
       {externalLink ? (
@@ -81,10 +83,10 @@ export default function ProjectPreview({
             <div className="project-preview-content-inner">
               <h3 className="project-meta-header-item project-meta-header-title">
                 {italicizeTitle == true ? (
-                  <cite>{title}</cite>
+                  <cite>{widontTitle}</cite>
                 ) : (
                   <>
-                    {title}
+                    {widontTitle}
                   </>
                 )}
               </h3>
@@ -126,10 +128,10 @@ export default function ProjectPreview({
             <div className="project-preview-content-inner">
               <h3 className="project-meta-header-item project-meta-header-title">
                 {italicizeTitle == true ? (
-                  <cite>{title}</cite>
+                  <cite>{widontTitle}</cite>
                 ) : (
                   <>
-                    {title}
+                    {widontTitle}
                   </>
                 )}
               </h3>
@@ -171,10 +173,10 @@ export default function ProjectPreview({
             <div className="project-preview-content-inner">
               <h3 className="project-meta-header-item project-meta-header-title">
                 {italicizeTitle == true ? (
-                  <cite>{title}</cite>
+                  <cite>{widontTitle}</cite>
                 ) : (
                   <>
-                    {title}
+                    {widontTitle}
                   </>
                 )}
               </h3>
@@ -240,10 +242,10 @@ export default function ProjectPreview({
             <div className="project-preview-content-inner">
               <h3 className="project-meta-header-item project-meta-header-title">
                 {italicizeTitle == true ? (
-                  <cite>{title}</cite>
+                  <cite>{widontTitle}</cite>
                 ) : (
                   <>
-                    {title}
+                    {widontTitle}
                   </>
                 )}
               </h3>

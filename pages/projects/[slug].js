@@ -10,6 +10,7 @@ import Date from '../../components/date'
 import CoverImage from '../../components/cover-image'
 import CoverFile from '../../components/cover-file'
 import Link from 'next/link'
+import Widont from 'widont'
 import { getFile } from '@sanity/asset-utils'
 import { projectQuery, projectSlugsQuery } from '../../lib/queries'
 import { urlForImage } from '../../lib/sanity'
@@ -22,6 +23,8 @@ export default function Project({ project, moreProjects }) {
   if (!router.isFallback && !slug) {
     return <ErrorPage statusCode={404} />
   }
+  
+  var widontTitle = Widont(project.title)
   
   useEffect( () => { document.querySelector('body').classList.add('project') } );
 
@@ -55,10 +58,10 @@ export default function Project({ project, moreProjects }) {
               <h3 className="project-meta-header-item-heading">Project</h3>
               <h2 className="project-title">
                 {project.italicizeTitle == true ? (
-                  <cite>{project.title}</cite>
+                  <cite>{widontTitle}</cite>
                 ) : (
                   <>
-                    {project.title}
+                    {widontTitle}
                   </>
                 )}
               </h2>
