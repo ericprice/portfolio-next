@@ -35,10 +35,3 @@ export async function getStaticProps() {
     revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 60,
   }
 }
-
-export async function getStaticPaths() {
-  return {
-    paths: [], // Return an empty array since we don't know the valid paths yet
-    fallback: true // Set fallback to true so that 404 pages can be generated
-  }
-}
