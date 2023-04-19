@@ -254,9 +254,18 @@ textarea {
   grid-column: span 2;
 }
 
-.project-meta-header-title {
-  grid-column: span 4;
+.project-preview-content-inner {
+  position: relative;
+}
+
+.project-preview-case-study .project-meta-header-title {
   text-wrap: balance;
+  
+  @include breakpoint($m-up) {
+    position: sticky;
+    top: calc(var(--outer-margin-y) + var(--leading) * 2.667 - 2px);
+    grid-column: span 4;
+  }
 }
 
 .project-meta-header-date {
