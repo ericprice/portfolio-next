@@ -9,56 +9,80 @@ import { indexQuery } from '../lib/queries'
 import { client } from '../lib/sanity.server'
 
 export default function Index({ allProjects }) {
-  useEffect( () => { document.querySelector('body').classList.remove('project') } );
-  var scrollTimeout
-  useEffect( () => {
-    document.addEventListener('scroll', ()=> {
+  useEffect(() => {
+    document.querySelector('body').classList.remove('project');
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      var scrollTimeout
       if (!document.querySelector('body').classList.contains('scrolling')) {
-        document.querySelector('body').classList.add('scrolling')
+        document.querySelector('body').classList.add('scrolling');
       }
-      clearTimeout(scrollTimeout)
-      scrollTimeout = setTimeout(function() {
-        document.querySelector('body').classList.remove('scrolling')
-      }, 750)
-    });
+      
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        document.querySelector('body').classList.remove('scrolling');
+      }, 750);
+    };
+    
+    document.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
   }, []);
   
-  if (typeof window !== 'undefined') {
-    const searchInput = document.querySelector('#search-input');
-    const searchClear = document.querySelector('.search-clear');
-    const projectsList = document.querySelector('.projects-list');
-    const projects = projectsList.querySelectorAll('.project-preview');
-    
-    searchClear.addEventListener("click", function() {
-      searchInput.value = "";
-      searchInput.blur();
-      document.querySelector('body').classList.remove('searching');
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const searchInput = document.querySelector('#search-input');
+      const searchClear = document.querySelector('.search-clear');
+      const projectsList = document.querySelector('.projects-list');
       
-      projects.forEach((project) => {
-        project.style.display = 'block';
-      });
-    });
-    
-    searchInput.addEventListener('input', () => {
-      const searchTerm = searchInput.value.trim().toLowerCase();
-      
-      if (searchTerm.length > 0) {
-        document.querySelector('body').classList.add('searching')
-      } else {
-        document.querySelector('body').classList.remove('searching')
+      if (searchInput && searchClear && projectsList) {
+        const projects = projectsList.querySelectorAll('.project-preview');
+        
+        const clearSearch = () => {
+          searchInput.value = '';
+          searchInput.blur();
+          document.querySelector('body').classList.remove('searching');
+          
+          projects.forEach((project) => {
+            project.style.display = 'block';
+          });
+        };
+        
+        const handleInput = () => {
+          const searchTerm = searchInput.value.trim().toLowerCase();
+          
+          if (searchTerm.length > 0) {
+            document.querySelector('body').classList.add('searching');
+          } else {
+            document.querySelector('body').classList.remove('searching');
+          }
+        
+          projects.forEach((project) => {
+            const title = project.querySelector('.project-preview-content').textContent.trim().toLowerCase();
+        
+            if (title.includes(searchTerm)) {
+              project.style.display = 'block';
+            } else {
+              project.style.display = 'none';
+            }
+          });
+        };
+        
+        searchClear.addEventListener('click', clearSearch);
+        searchInput.addEventListener('input', handleInput);
+        
+        return () => {
+          searchClear.removeEventListener('click', clearSearch);
+          searchInput.removeEventListener('input', handleInput);
+        };
       }
-    
-      projects.forEach((project) => {
-        const title = project.querySelector('.project-preview-content').textContent.trim().toLowerCase();
-    
-        if (title.includes(searchTerm)) {
-          project.style.display = 'block';
-        } else {
-          project.style.display = 'none';
-        }
-      });
-    });
-  }
+    }
+  }, []);
+  
   return (
     <Layout>
       <Head>
@@ -72,7 +96,7 @@ export default function Index({ allProjects }) {
         </div>
       </Container>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {
