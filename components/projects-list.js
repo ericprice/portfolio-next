@@ -60,7 +60,7 @@ export default function ProjectsList({ projects }) {
   return (
     <div className="projects-list">
       <header className="project-meta-header projects-list-header">
-        <h2 className="project-meta-header-item project-meta-header-date">Date</h2>
+        <h2 className="project-meta-header-item project-meta-header-date">Year</h2>
         <h2 className="project-meta-header-item project-meta-header-title">Project</h2>
         <h2 className="project-meta-header-item project-meta-header-client">Client</h2>
         <h2 className="project-meta-header-item project-meta-header-categories">Type</h2>

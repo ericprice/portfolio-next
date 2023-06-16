@@ -49,7 +49,7 @@ export default function Project({ project, moreProjects }) {
           <Header />
           <header className="project-meta-header">
             <div className="project-meta-header-item project-meta-header-date">
-              <h3 className="project-meta-header-item-heading">Date</h3>
+              <h3 className="project-meta-header-item-heading">Year</h3>
               {project.date && (
                 <Date dateString={project.date} />
               )}
