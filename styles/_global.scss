@@ -51,6 +51,7 @@ body {
   text-rendering: optimizeLegibility;
   @include antialiased;
   font-feature-settings: "ss02" 1, "ss06" 1;
+  hanging-punctuation: first allow-end last;
   
   @include breakpoint($m) {
     font-weight: bold;
