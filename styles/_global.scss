@@ -8,6 +8,7 @@ $l-up: min-width 1024px;
 $xl: min-width 1400px;
 
 $main-color: #222;
+$border-color: #3e3e3e;
 $main-bg: #ccc;
 $accent: #fff;
 
@@ -230,7 +231,7 @@ textarea {
     padding-top: 1px;
     z-index: 50;
     background: $main-bg;
-    border-bottom: 1px solid $main-color;
+    border-bottom: 1px solid $border-color;
     padding-bottom: calc(var(--leading) / 3);
   }
   
@@ -280,7 +281,7 @@ textarea {
       top: 0;
       left: 0;
       width: calc(100% + var(--gap));
-      border-top: 1px solid $main-color;
+      border-top: 1px solid $border-color;
     }
   }
   
@@ -497,12 +498,12 @@ textarea {
   }
   
   .project-preview[data-start-of-year=true] .project-preview-content-inner {
-    border-top: 1px solid $main-color !important;
+    border-top: 1px solid $border-color !important;
   }
   
   .projects-year {
     position: relative;
-    border-top: 1px solid $main-color;
+    border-top: 1px solid $border-color;
     //overflow: hidden;
     margin-top: -1px;
     
@@ -534,7 +535,7 @@ textarea {
       gap: 0 var(--gap);
       grid-template-columns: repeat(10, 1fr);
       padding: calc(var(--leading) / 3 - 1px) 0 calc(var(--leading) / 3);
-      border-top: 1px solid $main-color;
+      border-top: 1px solid $border-color;
       margin-top: -1px;
       grid-column: span 10;
       
@@ -565,7 +566,7 @@ textarea {
     
     &.project-preview-external-link {
       .project-preview-content-inner {
-        border-bottom: 1px solid $main-color;
+        border-bottom: 1px solid $border-color;
       }
       
       &:hover {
@@ -593,7 +594,7 @@ textarea {
     
     &.project-preview-case-study {
       .project-preview-content-inner {
-        border-bottom: 1px solid $main-color;
+        border-bottom: 1px solid $border-color;
       }
       
       &::before {
@@ -603,7 +604,7 @@ textarea {
     
     &.project-preview-snippet {
       .project-preview-content-inner {
-        border-bottom: 1px solid $main-color;
+        border-bottom: 1px solid $border-color;
       }
       
       &::before {
@@ -625,7 +626,7 @@ textarea {
     
     &.project-preview-disabled {
       .project-preview-content-inner {
-        border-top: 1px dotted $main-color;
+        border-top: 1px dotted $border-color;
       }
       
       .project-preview-content-inner .project-meta-header-item {

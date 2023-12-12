@@ -36,7 +36,7 @@
     display: grid;
     gap: 0 var(--gap);
     grid-template-columns: repeat(12, 1fr);
-    border-top: 1px solid $main-color;
+    border-top: 1px solid $border-color;
     padding-top: calc(var(--leading) / 3);
     //margin-top: calc(50vh - 4rem);
     margin-top: calc(50vh - (var(--leading) * 12));
