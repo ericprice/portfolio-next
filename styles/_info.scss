@@ -16,16 +16,18 @@
   
   .info-statement {
     grid-column: span 12;
-    margin: -.06em 0 1.1em -.06em;
-    font-size: 1.75rem;
-    line-height: 1.1em;
-    letter-spacing: -.02em;
+    margin: 1em auto 1.5em;
+    padding: 0 1em;
+    font-size: 4rem;
+    line-height: 1em;
+    //letter-spacing: -.02em;
     word-spacing: -.02em;
     max-width: 1300px;
+    text-align: center;
     
     @include breakpoint($m-up) {
-      font-size: 2.125rem;
-      line-height: 1.1em;
+      font-size: 8rem;
+      line-height: 1em;
     }
   }
   

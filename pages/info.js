@@ -1,9 +1,60 @@
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Container from '../components/container'
 import Header from '../components/header'
 import Layout from '../components/layout'
 
+const phrases = [
+  //"“Corporate Harmony”",
+  //"“Serious Play”",
+  //"“Poetic Metric”",
+  //"“Gentle Grid”",
+  //"“Direction X”",
+  //"“Open Secret”",
+  //"“Salesman’s Muse”",
+  //"“Fantasy Metrics”"
+  "“Shift-Work”",
+  //"“Paint Work”",
+  //"“Totally Wired”",
+  //"“Fit & Working Again”",
+  //"“Free Range”",
+  //"“F-‘Oldin’ Money”",
+];
+
+const morePhrases = [
+  "“Shift-Work”",
+  "“Paint Work”",
+  "“Totally Wired”",
+  "“Fit & Working Again”",
+  "“Free Range”",
+  "“F-‘Oldin’ Money”",
+];
+
 export default function Info() {
+  const [phrase, setPhrase] = useState('');
+  
+  useEffect(() => {
+    setPhrase(getRandomPhrase());
+  }, []);
+  
+  const getRandomPhrase = () => {
+    const randomIndex = Math.floor(Math.random() * phrases.length);
+    return phrases[randomIndex];
+  };
+  
+  const getRandomPhraseAgain = () => {
+    let newPhrase;
+    do {
+      const randomIndex = Math.floor(Math.random() * morePhrases.length);
+      newPhrase = morePhrases[randomIndex];
+    } while (newPhrase === phrase);
+    return newPhrase;
+  };
+  
+  const handleClick = () => {
+    setPhrase(getRandomPhraseAgain());
+  };
+  
   return (
     <Layout>
       <Head>
@@ -13,7 +64,7 @@ export default function Info() {
         <div className="site-inner-container">
           <Header />
           <div className="info">
-            {/* <h2 className="info-statement">Eric Price is a Brooklyn-based graphic designer and programmer specializing in identity, web, and publishing for arts and culture.</h2> */}
+            <h2 className="info-statement" onClick={handleClick}>{phrase}</h2>
             <section className="info-section info-section-contact">
               <h3 className="info-heading">Contact</h3>
               <div className="info-content">
