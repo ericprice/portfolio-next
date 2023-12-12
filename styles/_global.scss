@@ -8,7 +8,7 @@ $l-up: min-width 1024px;
 $xl: min-width 1400px;
 
 $main-color: #222;
-$main-bg: #afafaf;
+$main-bg: #ccc;
 $accent: #fff;
 
 :root {
@@ -31,13 +31,13 @@ $accent: #fff;
 html {
   font-size: 13px;
 
-  @include breakpoint($m-up) {
-    font-size: 1.28vw;
-  }
+  //@include breakpoint($m-up) {
+  //  font-size: 13px;
+  //}
 
-  @include breakpoint($xl) {
-    font-size: 18px;
-  }
+  //@include breakpoint($xl) {
+  //  font-size: 18px;
+  //}
 }
 
 body {
@@ -52,10 +52,6 @@ body {
   @include antialiased;
   font-feature-settings: "ss02" 1, "ss06" 1;
   hanging-punctuation: first allow-end last;
-  
-  @include breakpoint($m) {
-    font-weight: bold;
-  }
   
   &.project {
     background: $accent;
@@ -77,11 +73,6 @@ em,
 i,
 cite {
   font-style: italic;
-}
-
-strong,
-b {
-  font-weight: bold;
 }
 
 button,
@@ -453,7 +444,7 @@ textarea {
     line-height: var(--leading);
     padding-top: .08rem;
     letter-spacing: .02em;
-    font-weight: bold;
+    //font-weight: bold;
     
     &::before {
       content: 'w/ ';
