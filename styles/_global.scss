@@ -571,12 +571,12 @@ textarea {
       
       &:hover {
         @media (hover: hover) {
-          color: #0ff;
+          color: #00f;
           
-          cursor: url('/images/cursor-teal.svg') 6 6, auto;
+          cursor: url('/images/cursor-blue.svg') 6 6, auto;
           cursor: -webkit-image-set(
-            url('/images/cursor-teal.svg') 1x,
-            url('/images/cursor-teal@2x.svg') 2x
+            url('/images/cursor-blue.svg') 1x,
+            url('/images/cursor-blue@2x.svg') 2x
           ) 6 6, auto;
         }
       }
