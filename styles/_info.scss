@@ -24,6 +24,7 @@
     word-spacing: -.02em;
     max-width: 1300px;
     text-align: center;
+    user-select: none;
     
     @include breakpoint($m-up) {
       font-size: 8rem;

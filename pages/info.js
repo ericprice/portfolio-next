@@ -29,7 +29,6 @@ const morePhrases = [
   "“Laptop Dog”",
   "“Prole Art Threat”",
   "“What You Need”",
-  "“Trust in Me”",
 ];
 
 export default function Info() {
