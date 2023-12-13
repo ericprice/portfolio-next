@@ -13,7 +13,6 @@ const phrases = [
   //"“Open Secret”",
   //"“Salesman’s Muse”",
   //"“Fantasy Metrics”"
-  //"“Shift-Work”",
   "“It’s the New Thing”",
 ];
 
@@ -74,7 +73,6 @@ export default function Info() {
                   <li><a href="https://github.com/ericprice">GitHub</a></li>
                   <li><a href="https://instagram.com/ericprice">Instagram</a></li>
                   <li><a href="https://typo.social/@ericprice" rel="me">Mastodon</a></li>
-                  <li><a href="https://twitter.com/ericprice">Twitter</a></li>
                 </ul>
               </div>
             </section>
