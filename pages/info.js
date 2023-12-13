@@ -13,12 +13,8 @@ const phrases = [
   //"“Open Secret”",
   //"“Salesman’s Muse”",
   //"“Fantasy Metrics”"
-  "“Shift-Work”",
-  //"“Paint Work”",
-  //"“Totally Wired”",
-  //"“Fit & Working Again”",
-  //"“Free Range”",
-  //"“F-‘Oldin’ Money”",
+  //"“Shift-Work”",
+  "“It’s the New Thing”",
 ];
 
 const morePhrases = [
@@ -28,6 +24,12 @@ const morePhrases = [
   "“Fit & Working Again”",
   "“Free Range”",
   "“F-‘Oldin’ Money”",
+  "“Printhead”",
+  "“It’s the New Thing”",
+  "“Laptop Dog”",
+  "“Prole Art Threat”",
+  "“What You Need”",
+  "“Trust in Me”",
 ];
 
 export default function Info() {
