@@ -170,6 +170,30 @@
       
       &[data-display='halfWidth'] {
         grid-column: span 6;
+        
+        .project-media-item-meta {
+          grid-template-columns: repeat(6, 1fr);
+          
+          .project-media-item-number {
+            grid-column: span 1;
+          }
+          
+          .project-media-item-caption {
+            grid-column: span 5;
+          }
+          
+          @include breakpoint($m-up) {
+            grid-template-columns: repeat(12, 1fr);
+            
+            .project-media-item-number {
+              grid-column: span 1;
+            }
+            
+            .project-media-item-caption {
+              grid-column: span 11;
+            }
+          }
+        }
       }
       
       &:last-child {
@@ -185,7 +209,7 @@
         gap: 0 var(--gap);
         grid-template-columns: repeat(12, 1fr);
         line-height: var(--leading);
-        padding: calc(var(--leading) / 3) 0;
+        padding: calc(var(--leading) / 3) 0 var(--leading);
         text-align: left;
         
         .project-media-item-number {
