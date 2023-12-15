@@ -140,6 +140,9 @@ export default function Project({ project, moreProjects }) {
                         {mediaItem.caption && (
                           <div className="project-media-item-caption">{mediaItem.caption}</div>
                         )}
+                        {mediaItem.description && (
+                          <div className="project-media-item-caption">{mediaItem.description}</div>
+                        )}
                       </div>
                     )
                   } else {

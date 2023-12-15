@@ -141,6 +141,11 @@ export default {
               type: 'string'
             },
             {
+              name: 'description',
+              title: 'Description',
+              type: 'string'
+            },
+            {
               name: 'display',
               type: 'string',
               title: 'Display',
