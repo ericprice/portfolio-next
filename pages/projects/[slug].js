@@ -132,28 +132,38 @@ export default function Project({ project, moreProjects }) {
             </aside>
             {project.media && (
               <div className="project-media">
-                {project.media.map(mediaItem => {
+                {project.media.map((mediaItem, index) => {
                   if (mediaItem._type == 'image') {
                     return (
-                      <div className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
+                      <figure className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
                         <img src={urlForImage(mediaItem.asset._ref).width(2400).quality(85).url()} />
-                        {mediaItem.caption && (
-                          <div className="project-media-item-caption">{mediaItem.caption}</div>
-                        )}
-                      </div>
+                        <div className="project-media-item-meta">
+                          <div className="project-media-item-number">{index + 1}</div>
+                          {mediaItem.caption && (
+                            <figcaption className="project-media-item-caption">
+                              {mediaItem.caption}
+                            </figcaption>
+                          )}
+                        </div>
+                      </figure>
                     )
                   } else {
                     const file = getFile(mediaItem, sanityConfig)
                     if (file.asset.extension == 'mp4') {
                       return (
-                        <div className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
+                        <figure className="project-media-item" key={mediaItem.asset._ref} data-display={mediaItem.display}>
                           <video loop={true} autoPlay={true} muted={true} playsInline={true}>
                             <source src={file.asset.url} type="video/mp4"></source>
                           </video>
-                          {mediaItem.caption && (
-                            <div className="project-media-item-caption">{mediaItem.caption}</div>
-                          )}
-                        </div>
+                          <div className="project-media-item-meta">
+                            <div className="project-media-item-number">{index + 1}</div>
+                            {mediaItem.caption && (
+                              <figcaption className="project-media-item-caption">
+                                {mediaItem.caption}
+                              </figcaption>
+                            )}
+                          </div>
+                        </figure>
                       )
                     }
                   }

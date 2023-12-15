@@ -180,13 +180,32 @@
         width: 100%;
       }
       
-      .project-media-item-caption {
+      .project-media-item-meta {
+        display: grid;
+        gap: 0 var(--gap);
+        grid-template-columns: repeat(12, 1fr);
         line-height: var(--leading);
         padding: calc(var(--leading) / 3) 0;
         text-align: left;
         
+        .project-media-item-number {
+          grid-column: span 1;
+        }
+        
+        .project-media-item-caption {
+          grid-column: span 11;
+        }
+        
         @include breakpoint($m-up) {
-          width: 50%;
+          grid-template-columns: repeat(24, 1fr);
+          
+          .project-media-item-number {
+            grid-column: span 1;
+          }
+          
+          .project-media-item-caption {
+            grid-column: span 23;
+          }
         }
       }
     }
