@@ -13,7 +13,7 @@ export default function Index({ allProjects }) {
   return (
     <Layout>
       <Head>
-        <title>404 &ndash; Studio Eric Price</title>
+        <title>404 &ndash; Eric Price</title>
       </Head>
       <Container pageName="error">
         <div className="site-inner-container">

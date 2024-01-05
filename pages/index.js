@@ -86,7 +86,7 @@ export default function Index({ allProjects }) {
   return (
     <Layout>
       <Head>
-        <title>Studio Eric Price</title>
+        <title>Eric Price</title>
       </Head>
       <Container pageName="home">
         <div className="site-inner-container">

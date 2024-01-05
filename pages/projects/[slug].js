@@ -31,7 +31,7 @@ export default function Project({ project, moreProjects }) {
   return (
     <Layout>
       <Head>
-        <title>{project.title + ' – Studio Eric Price'}</title>
+        <title>{project.title + ' – Eric Price'}</title>
         {project.featuredImage?.asset?._ref && (
           <meta
             key="ogImage"

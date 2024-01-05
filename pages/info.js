@@ -58,7 +58,7 @@ export default function Info() {
   return (
     <Layout>
       <Head>
-        <title>Info &ndash; Studio Eric Price</title>
+        <title>Info &ndash; Eric Price</title>
       </Head>
       <Container pageName="info">
         <div className="site-inner-container">
