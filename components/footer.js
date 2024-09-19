@@ -7,7 +7,7 @@ export default function Footer() {
           <input type="text" id="search-input" placeholder="Search" />
           <button className="search-clear">Clear</button>
         </div>
-        <div className="site-footer-item site-footer-revision">Rev. 6/2024</div>
+        <div className="site-footer-item site-footer-revision">Rev. 9/2024</div>
         <div className="site-footer-item site-footer-contact">
           <a href="mailto:info@ericprice.info">info@ericprice.info</a>
         </div>
