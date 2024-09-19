@@ -90,7 +90,13 @@ export default function ProjectPreview({
                   </>
                 )}
               </h3>
-              <div className="project-meta-header-item project-meta-header-client"></div>
+              {client?.name && !sameTitleAndClient ? (
+                <div className="project-meta-header-item project-meta-header-client">
+                  {client.name}
+                </div>
+              ) : (
+                <div className="project-meta-header-item project-meta-header-client"></div>
+              )}
               {categories && (
                 <ul className="project-meta-header-item project-meta-header-categories">
                   {categories.map(category => <li key={category.name}>{category.name}</li>)}
